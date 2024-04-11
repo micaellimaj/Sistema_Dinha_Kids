@@ -1,7 +1,12 @@
-# Projeto: Site Fullstack Java para Dinha Kids 👼
+# Projeto: Site Full stack Java para Dinha Kids 👼
+
+<div align="center">
+  <b>"DINHA KIDS -VESTINDO SEU BEBÊ"</b> <br>
+ <td><img src="Dinha.jpeg" width="400" style="display: block; margin: 0 auto;" alt="Macedo"> </td>
+  </div>
 
 ## Sobre a Dinha Kids:
-* Negócio de confecção de roupas infantis que tem como necessidade um sistema que organizasse e de forma eficaz o estoque de roupas, que está sendo um problema enfrentado por eles;
+* Negócio de confecção de roupas infantis que tem como necessidade um sistema que organizasse de forma eficaz o estoque de roupas, que está sendo um problema enfrentado por eles;
 
 ## Objetivos do Sistema:
 * Criar um banco de dados para armazenar os dados que serão inseridos no sistema, assim evita-se a perda de dados e a dificuldade de encontrá-los;
