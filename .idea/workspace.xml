@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="220a0352-c141-4198-a14d-ea465d761c08" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sistema_Dinha_Kids/Sistema_Dinha_Kids-main/Dinha/Sistema_Estoque/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/Sistema_Dinha_Kids/Sistema_Dinha_Kids-main/Dinha/Sistema_Estoque/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sistema_Dinha_Kids/Sistema_Dinha_Kids-main/Dinha/Sistema_Estoque/blank.html" beforeDir="false" afterPath="$PROJECT_DIR$/Sistema_Dinha_Kids/Sistema_Dinha_Kids-main/Dinha/Sistema_Estoque/blank.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sistema_Dinha_Kids/Sistema_Dinha_Kids-main/Dinha/Sistema_Estoque/buttons.html" beforeDir="false" afterPath="$PROJECT_DIR$/Sistema_Dinha_Kids/Sistema_Dinha_Kids-main/Dinha/Sistema_Estoque/buttons.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sistema_Dinha_Kids/Sistema_Dinha_Kids-main/Dinha/Sistema_Estoque/cards.html" beforeDir="false" afterPath="$PROJECT_DIR$/Sistema_Dinha_Kids/Sistema_Dinha_Kids-main/Dinha/Sistema_Estoque/cards.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sistema_Dinha_Kids/Sistema_Dinha_Kids-main/Dinha/Sistema_Estoque/charts.html" beforeDir="false" afterPath="$PROJECT_DIR$/Sistema_Dinha_Kids/Sistema_Dinha_Kids-main/Dinha/Sistema_Estoque/charts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sistema_Dinha_Kids/Sistema_Dinha_Kids-main/Dinha/Sistema_Estoque/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Sistema_Dinha_Kids/Sistema_Dinha_Kids-main/Dinha/Sistema_Estoque/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sistema_Dinha_Kids/Sistema_Dinha_Kids-main/Dinha/Sistema_Estoque/tables.html" beforeDir="false" afterPath="$PROJECT_DIR$/Sistema_Dinha_Kids/Sistema_Dinha_Kids-main/Dinha/Sistema_Estoque/tables.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sistema_Dinha_Kids/Sistema_Dinha_Kids-main/Dinha/Sistema_Estoque/utilities-animation.html" beforeDir="false" afterPath="$PROJECT_DIR$/Sistema_Dinha_Kids/Sistema_Dinha_Kids-main/Dinha/Sistema_Estoque/utilities-animation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sistema_Dinha_Kids/Sistema_Dinha_Kids-main/Dinha/Sistema_Estoque/utilities-border.html" beforeDir="false" afterPath="$PROJECT_DIR$/Sistema_Dinha_Kids/Sistema_Dinha_Kids-main/Dinha/Sistema_Estoque/utilities-border.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sistema_Dinha_Kids/Sistema_Dinha_Kids-main/Dinha/Sistema_Estoque/utilities-color.html" beforeDir="false" afterPath="$PROJECT_DIR$/Sistema_Dinha_Kids/Sistema_Dinha_Kids-main/Dinha/Sistema_Estoque/utilities-color.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sistema_Dinha_Kids/Sistema_Dinha_Kids-main/Dinha/Sistema_Estoque/utilities-other.html" beforeDir="false" afterPath="$PROJECT_DIR$/Sistema_Dinha_Kids/Sistema_Dinha_Kids-main/Dinha/Sistema_Estoque/utilities-other.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,17 +34,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "conteúdo",
-    "kotlin-language-version-configured": "true",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.poratu.idea.plugins.tomcat.setting.TomcatServersConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;conteúdo&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.poratu.idea.plugins.tomcat.setting.TomcatServersConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
