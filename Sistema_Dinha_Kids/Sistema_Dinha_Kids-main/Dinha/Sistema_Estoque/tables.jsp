@@ -1,5 +1,6 @@
+<%@ page language="java" contentType = "text/html; charset=utf-8" pageEncoding="utf-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
 
@@ -27,6 +28,9 @@
 </head>
 
 <body id="page-top">
+
+<h1>Hello JSP</h1>
+<%out.println("Micael")
 
     <!-- Page Wrapper -->
     <div id="wrapper">
