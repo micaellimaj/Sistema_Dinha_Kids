@@ -1,3 +1,5 @@
+package com.example.dinhakids.sistemaweb.Controllers;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -6,8 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/login")
 public class LoginController {
 
-    @GetMapping
-    public void login() {
+    @GetMapping("/novo")
+    public String login() {
         // Lógica de login aqui
+        return ("ok");
     }
 }
