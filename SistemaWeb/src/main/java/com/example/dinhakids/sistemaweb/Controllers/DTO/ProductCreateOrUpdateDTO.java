@@ -2,10 +2,10 @@ package com.example.dinhakids.sistemaweb.Controllers.DTO;
 
 import com.example.dinhakids.sistemaweb.Models.Product;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
+import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
@@ -19,13 +19,7 @@ public class ProductCreateOrUpdateDTO {
     private String id;
 
     private int quantidade;
-
-    @NotNull(message = "id da categoria do produto não informado")
-    private int categoria_id;
-
-    @NotNull(message = "id do fornecedor do produto não informado")
-    private int fornecedor_id;
-
+    private int preco;
 
     public Product getProduct(){
         Product product = new Product();
@@ -33,8 +27,9 @@ public class ProductCreateOrUpdateDTO {
         product.setNome(nome);
         product.setId(id);
         product.setQuantidade(quantidade);
-        product.setCategoria_id(categoria_id);
-        product.setFornecedor_id(fornecedor_id);
+        product.setPreco(preco);
+        product.setUltimaAtualizacao(LocalDateTime.now());
+        product.setCriadoEm(LocalDateTime.now());
 
         return product;
     }

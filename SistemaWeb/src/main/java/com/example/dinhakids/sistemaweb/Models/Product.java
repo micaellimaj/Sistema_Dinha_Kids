@@ -2,8 +2,8 @@ package com.example.dinhakids.sistemaweb.Models;
 
 import jakarta.persistence.*;
 import lombok.Data;
-
-import java.time.LocalDate;
+import org.hibernate.annotations.CreationTimestamp;
+import java.time.LocalDateTime;
 
 @Data
 @Entity(name = "produtos")
@@ -19,11 +19,12 @@ public class Product {
     private int quantidade;
 
     private double preco;
-    private int categoria_id;
-    private int fornecedor_id;
 
-    @Temporal(TemporalType.DATE)
-    private LocalDate ultimaAtualizacao;
+    @CreationTimestamp
+    private LocalDateTime criadoEm;
+
+    @CreationTimestamp
+    private LocalDateTime ultimaAtualizacao;
 
 
 }
