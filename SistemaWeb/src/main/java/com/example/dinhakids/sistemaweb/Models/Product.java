@@ -26,5 +26,4 @@ public class Product {
     @CreationTimestamp
     private LocalDateTime ultimaAtualizacao;
 
-
 }
