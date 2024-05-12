@@ -8,11 +8,7 @@ public class Categorias {
 
     @Id
     private int categoria_id;
-    private String nome;
 
-    public Categorias(int categoria_id, String nome) {
-        this.categoria_id = categoria_id;
-        this.nome = nome;
-    }
+    private String nome;
 
 }

@@ -1,33 +1,64 @@
 package com.example.dinhakids.sistemaweb.Controllers;
 
-import at.favre.lib.crypto.bcrypt.BCrypt;
-import com.example.dinhakids.sistemaweb.Models.UserModel;
-import com.example.dinhakids.sistemaweb.Repositorio.IUserRepository;
+import com.example.dinhakids.sistemaweb.Controllers.DTO.UserCreateOrUpdateDTO;
+import com.example.dinhakids.sistemaweb.Models.User;
+import com.example.dinhakids.sistemaweb.services.ProductService;
+import com.example.dinhakids.sistemaweb.services.UserService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @RestController
 @RequestMapping("/users")
 public class UserController {
 
     @Autowired
-    private IUserRepository userRepository;
+    private UserService userService;
+    @Autowired
+    private ProductService productService;
 
-    @PostMapping("/")
-    public ResponseEntity create(@RequestBody UserModel userModel){
-        var user = this.userRepository.findByUsername(userModel.getUsername()); //procura se ja existe um username igual ao digitado
+    //retorna todos os usuarios
+    @GetMapping
+    public ResponseEntity<List<User>> getAllUsers() {
+        List<User> users = userService.getUsers();
 
-        if(user != null){ //se ja tiver um username igual ao digitado, dará erro bad request
-            System.out.println("Usuário existente");
-            return ResponseEntity.status(400).body("Usuário já existe");
-        }
+        return ResponseEntity.ok(users);
+    }
 
-        var passwordHashred = BCrypt.withDefaults().hashToString(12,userModel.getSenha().toCharArray()); // encriptador de senha
-        userModel.setSenha(passwordHashred);
+    //cria novos usuarios
+    @PostMapping(path = "/novo")
+    public ResponseEntity<User> createUser(@RequestBody @Valid UserCreateOrUpdateDTO dto){
+        User user = userService.createUser(dto.getUser());
 
-        var userCreated = this.userRepository.save(userModel); // cria o usuario
-        return ResponseEntity.status(HttpStatus.CREATED).body(userCreated);
+        return ResponseEntity.status(201).body(user);
+    }
+
+    //retorna o usuario de acordo com o username
+    @GetMapping(path = "{id}") // retorna o usuario de acordo com o username
+    public ResponseEntity<User> getUserByUsername(@PathVariable String username) {
+        User user = userService.getUserByUsername(username);
+
+        return ResponseEntity.ok(user);
+    }
+
+    //atualiza o usuario
+    @PutMapping(path = "{id}")
+    public ResponseEntity<User> updateUser(@PathVariable String username, String email, @RequestBody @Valid UserCreateOrUpdateDTO dto) {
+        User user = dto.getUser();
+        user.setUsername(username);
+        user.setEmail(email);
+        userService.updateUser(user);
+
+        return ResponseEntity.ok(user);
+    }
+
+    //deleta o usuario
+    @DeleteMapping(path = "{id}")
+    public ResponseEntity<User> deleteUser(@PathVariable String username) {
+        userService.deleteUser(username);
+
+        return ResponseEntity.noContent().build();
     }
 }
