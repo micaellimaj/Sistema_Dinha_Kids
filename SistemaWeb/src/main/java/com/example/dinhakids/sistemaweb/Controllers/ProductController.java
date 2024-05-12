@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/dinha/")
-public class ProdutosController {
+public class ProductController {
 
     @Autowired
     private ProductService productService;
@@ -25,7 +25,7 @@ public class ProdutosController {
         return ResponseEntity.ok(products);
     }
 
-    @PostMapping
+    @PostMapping(path = "/novo")
     public ResponseEntity<Product> createProduct(@RequestBody @Valid ProductCreateOrUpdateDTO dto){
         Product product = productService.createProduct(dto.getProduct());
 

@@ -1,17 +1,20 @@
 package com.example.dinhakids.sistemaweb.Models;
 
+import jakarta.persistence.Id;
 import lombok.Data;
 
 @Data
 public class Fornecedores {
-    private int id;
+
+    @Id
+    private int fornecedor_id;
     private String nome;
     private String endereco;
     private double telefone;
 
-    public Fornecedores(String nome, int id, String endereco, double telefone) {
+    public Fornecedores(String nome, int fornecedor_id, String endereco, double telefone) {
         this.nome = nome;
-        this.id = id;
+        this.fornecedor_id = fornecedor_id;
         this.endereco = endereco;
         this.telefone = telefone;
     }

@@ -22,9 +22,14 @@ public class ProductService {
 
     @Transactional(rollbackOn = Exception.class)
     public Product createProduct(Product product) {
-        Optional<Product> productExists = productRepository.findProductByNome(product.getNome());
-        if(productExists.isPresent()){
+        Optional<Product> NameExists = productRepository.findProductByNome(product.getNome());
+        if(NameExists.isPresent()){
             throw new BusinessException("Já existe um produto com o Nome informado");
+        }
+
+        Optional<Product> IdExists = productRepository.findProductById(product.getId());
+        if(IdExists.isPresent()){
+            throw new BusinessException("Já existe um produto com o ID informado");
         }
 
         productRepository.save(product);
@@ -41,7 +46,7 @@ public class ProductService {
     public Product updateProduct(Product product) {
         Optional<Product> productExists = productRepository.findProductByNome(product.getNome());
         if(productExists.isPresent() && !productExists.get().getId().equals(product.getId())){
-            throw new BusinessException("Já existe um evento com o título informado");
+            throw new BusinessException("Já existe um produto com o nome informado");
         }
 
         productRepository.save(product);
