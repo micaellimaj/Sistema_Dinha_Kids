@@ -12,7 +12,7 @@ import jakarta.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/dinha")
+@RequestMapping(value = "/dinha") //Fazer referência a table
 public class ProductController {
 
     @Autowired

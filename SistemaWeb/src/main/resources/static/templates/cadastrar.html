@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz./thymeleaf/layout">
 
 <head>
 
@@ -38,7 +39,7 @@
                             <form class="user" method="POST" action="/dashboard">
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" name="nomes"placeholder="Digite seu nome">
+                                        <input type="text" class="form-control form-control-user" name="nome"placeholder="Digite seu nome">
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control form-control-user" id="exampleLastName"
@@ -46,12 +47,12 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" name="emails" placeholder="Digite seu Email">
+                                    <input type="email" class="form-control form-control-user" name="email" placeholder="Digite seu Email">
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="password" class="form-control form-control-user"
-                                            name="senhas" placeholder="Digite sua senha">
+                                            name="senha" placeholder="Digite sua senha">
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="password" class="form-control form-control-user"

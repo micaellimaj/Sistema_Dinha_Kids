@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
-
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml"
+                    xmlns:layout="http://www.ultraq.net.nz./thymeleaf/layout">
 <head>
 
     <meta charset="utf-8">
@@ -47,7 +47,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="dashboard.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -370,6 +370,66 @@
                         For more information about DataTables, please visit the <a target="_blank"
                             href="https://datatables.net">official DataTables documentation</a>.</p>
 
+                    <!-- Formulário -->
+
+                    <div class="container">
+
+                        <div class="card o-hidden border-0 shadow-lg my-5">
+                            <div class="card-body p-0">
+                                <!-- Linha aninhada no corpo do cartão -->
+                                <div class="row">
+                                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                                    <div class="col-lg-7">
+                                        <div class="p-5">
+                                            <div class="text-center">
+                                                <h1 class="h4 text-gray-900 mb-4">Crie a sua conta aqui!</h1>
+                                            </div>
+                                            <form class="user" method="POST" action="/dashboard">
+                                                <div class="form-group row">
+                                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                                        <input type="text" class="form-control form-control-user" name="nome"placeholder="nome do produto">
+                                                    </div>
+
+                                                    <div class="col-sm-6">
+                                                        <input type="number" class="form-control form-control-user"  name ="quantidade"
+                                                               placeholder="Quantidade">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="number" class="form-control form-control-user" name="preco" placeholder="preço do produto">
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                                        <input type="text" class="form-control form-control-user"
+                                                               name="categoria" placeholder="categoria do produto">
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <input type="text" class="form-control form-control-user"
+                                                               name="fornecedor" placeholder="Nome do fornecedor">
+                                                    </div>
+                                                </div>
+                                                <a type="submit" href="dashboard.html" class="btn btn-primary btn-user btn-block">
+                                                    Salvar dados
+                                                </a>
+                                                <hr>
+
+                                            </form>
+                                            <hr>
+                                            <div class="text-center">
+                                                <a class="small" href="forgot-password.html">Esqueceu sua senha?</a>
+                                            </div>
+                                            <div class="text-center">
+                                                <a class="small" href="login.html">já tem uma conta?Conecte-se!</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
@@ -380,7 +440,6 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>id</th>
                                             <th>Nome</th>
                                             <th>quantidade</th>
                                             <th>preco</th>
@@ -390,7 +449,6 @@
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>id</th>
                                             <th>Nome</th>
                                             <th>quantidade</th>
                                             <th>preco</th>
@@ -400,14 +458,13 @@
                                     </tfoot>
 
                                     <tbody>
-                                    <!-- product - model   / ProdutosController / controll -->
-                                    <tr th:each="Product : ${ProdutosController}">
-                                        <td th:text="${Product.id}"></td>
-                                        <td th:text="${Product.nome}"></td>
-                                        <td th:text="${Product.quantidade}"></td>
-                                        <td th:text="${Product.preco}"></td>
-                                        <td th:text="${Product.categoria}"></td>
-                                        <td th:text="${Product.fornecedor}"></td>
+                                    <!-- Model   $ Controller - nome que vai está se referindo a isso daqui -->
+                                    <tr th:each="produtos : ${ProdutosController}">
+                                        <td th:text="${produtos.nome}"></td>
+                                        <td th:text="${produtos.quantidade}"></td>
+                                        <td th:text="${produtos.preco}"></td>
+                                        <td th:text="${produtos.categoria}"></td>
+                                        <td th:text="${produtos.fornecedor}"></td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -417,7 +474,19 @@
 
                 </div>
                 <!-- /.container-fluid -->
+                            <!-- Model   $ Controller - nome que vai está se referindo a isso daqui -->
 
+                <!--
+
+                <div th:each="produtos: ${Product}">
+                    <div class = "row">
+                        <p><span th: text="${Product.nome}"></span></p>
+                        <p><span th: text="${Product.quantidade}"></span></p>
+                        <p><span th: text="${Product.preco}"></span></p>
+                        <p><span th: text="${Product.categoria}"></span></p>
+                        <p><span th: text="${Product.fornecedor}"></span></p>
+                </div>
+-->
             </div>
             <!-- End of Main Content -->
 
