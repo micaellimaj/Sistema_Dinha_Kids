@@ -1,11 +1,10 @@
-package com.example.dinhakids.sistemaweb.Controllers.DTO;
+package com.example.dinhakids.sistemaweb.DTO.CreateOrUpdate;
 
-import com.example.dinhakids.sistemaweb.Models.User;
+import com.example.dinhakids.sistemaweb.Domain.User;
 import at.favre.lib.crypto.bcrypt.BCrypt;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.validator.constraints.Length;
 import java.time.LocalDateTime;
 import java.util.UUID;

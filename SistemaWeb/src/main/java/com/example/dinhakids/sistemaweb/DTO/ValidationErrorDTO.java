@@ -1,4 +1,4 @@
-package com.example.dinhakids.sistemaweb.Controllers.DTO;
+package com.example.dinhakids.sistemaweb.DTO;
 
 import java.util.ArrayList;
 import java.util.List;

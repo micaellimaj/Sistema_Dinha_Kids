@@ -1,14 +1,19 @@
 package com.example.dinhakids.sistemaweb.Controllers;
 
-import com.example.dinhakids.sistemaweb.Controllers.DTO.UserCreateOrUpdateDTO;
-import com.example.dinhakids.sistemaweb.Models.User;
-import com.example.dinhakids.sistemaweb.services.ProductService;
-import com.example.dinhakids.sistemaweb.services.UserService;
+import com.example.dinhakids.sistemaweb.DTO.CreateOrUpdate.UserCreateOrUpdateDTO;
+import com.example.dinhakids.sistemaweb.Domain.User;
+import com.example.dinhakids.sistemaweb.Services.ProductService;
+import com.example.dinhakids.sistemaweb.Services.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/users")
@@ -16,49 +21,68 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-    @Autowired
-    private ProductService productService;
 
-    //retorna todos os usuarios
-    @GetMapping
-    public ResponseEntity<List<User>> getAllUsers() {
-        List<User> users = userService.getUsers();
-
-        return ResponseEntity.ok(users);
+    @GetMapping("/cadastrar")
+    public String Cadastrar(@Valid User user) {
+        return "usuarios/cadastro";
     }
 
-    //cria novos usuarios
-    @PostMapping(path = "/novo")
-    public ResponseEntity<User> createUser(@RequestBody @Valid UserCreateOrUpdateDTO dto){
-        User user = userService.createUser(dto.getUser());
-
-        return ResponseEntity.status(201).body(user);
+    @GetMapping("/listar")
+    public String Listar(ModelMap model) {
+        model.addAttribute("usuarios", userService.buscarTodos());
+        return "usuarios/listar";
     }
 
-    //retorna o usuario de acordo com o username
-    @GetMapping(path = "{id}") // retorna o usuario de acordo com o username
-    public ResponseEntity<User> getUserByUsername(@PathVariable String username) {
-        User user = userService.getUserByUsername(username);
+    @PostMapping("/salvar")
+    public String Salvar(@Valid User user, BindingResult result, RedirectAttributes attr) {
+        if (result.hasErrors()) {
+            return "usuarios/cadastro";
+        }
 
-        return ResponseEntity.ok(user);
+        userService.salvar(user);
+        attr.addFlashAttribute("sucesso", "Usuario Salvo com sucesso!");
+        return "usuarios/cadastrar";
     }
 
-    //atualiza o usuario
-    @PutMapping(path = "{id}")
-    public ResponseEntity<User> updateUser(@PathVariable String username, String email, @RequestBody @Valid UserCreateOrUpdateDTO dto) {
-        User user = dto.getUser();
-        user.setUsername(username);
-        user.setEmail(email);
-        userService.updateUser(user);
-
-        return ResponseEntity.ok(user);
+    @GetMapping("/editar/{id}")
+    public String preEditar(@PathVariable("id") UUID id, ModelMap model) {
+        model.addAttribute("usuario", userService.buscarPorId(id));
+        return "usuarios/editar";
     }
 
-    //deleta o usuario
-    @DeleteMapping(path = "{id}")
-    public ResponseEntity<User> deleteUser(@PathVariable String username) {
-        userService.deleteUser(username);
+    @PostMapping("/editar")
+    public String editar(@Valid User user, BindingResult result, RedirectAttributes attr) {
+        if (result.hasErrors()) {
+            return "usuarios/editar";
+        }
 
-        return ResponseEntity.noContent().build();
+        userService.editar(user);
+        attr.addFlashAttribute("sucesso", "Usuario Editado com sucesso!");
+        return "usuarios/editar";
+    }
+
+    @GetMapping("/excluir/{id}")
+    public String excluir(@PathVariable("id") UUID id, RedirectAttributes attr) {
+        userService.excluir(id);
+        attr.addFlashAttribute("sucesso", "Usuario removido com sucesso!");
+        return "usuarios/cadastrar";
+    }
+
+    @GetMapping("/buscar/nome")
+    public String buscarPorNome(@RequestParam("nome") String nome, ModelMap model) {
+        model.addAttribute("usuarios", userService.buscarPorNome(nome));
+        return "usuarios/listar";
+    }
+
+    @GetMapping("/buscar/username")
+    public String buscarPorUsername(@RequestParam("username") String username, ModelMap model) {
+        model.addAttribute("usuarios", userService.buscarPorUsername(username));
+        return "usuarios/listar";
+    }
+
+    @GetMapping("/buscar/email")
+    public String buscarPorEmail(@RequestParam("email") String email, ModelMap model) {
+        model.addAttribute("usuarios", userService.buscarPorEmail(email));
+        return "usuarios/listar";
     }
 }

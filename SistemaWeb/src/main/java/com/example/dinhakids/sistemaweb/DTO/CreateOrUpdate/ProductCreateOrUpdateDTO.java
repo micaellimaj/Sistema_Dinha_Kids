@@ -1,6 +1,6 @@
-package com.example.dinhakids.sistemaweb.Controllers.DTO;
+package com.example.dinhakids.sistemaweb.DTO.CreateOrUpdate;
 
-import com.example.dinhakids.sistemaweb.Models.Product;
+import com.example.dinhakids.sistemaweb.Domain.Product;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.NoArgsConstructor;
