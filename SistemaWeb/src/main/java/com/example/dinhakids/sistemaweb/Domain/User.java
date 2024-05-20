@@ -1,4 +1,4 @@
-package com.example.dinhakids.sistemaweb.Models;
+package com.example.dinhakids.sistemaweb.Domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,6 +9,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+@SuppressWarnings("serial")
 @Data
 @Entity(name = "usuarios")
 public class User {
