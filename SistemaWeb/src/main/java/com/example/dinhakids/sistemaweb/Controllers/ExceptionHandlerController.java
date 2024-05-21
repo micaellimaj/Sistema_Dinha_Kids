@@ -1,7 +1,7 @@
 package com.example.dinhakids.sistemaweb.Controllers;
 
-import com.example.dinhakids.sistemaweb.Controllers.DTO.StandardErrorDTO;
-import com.example.dinhakids.sistemaweb.Controllers.DTO.ValidationErrorDTO;
+import com.example.dinhakids.sistemaweb.DTO.StandardErrorDTO;
+import com.example.dinhakids.sistemaweb.DTO.ValidationErrorDTO;
 import com.example.dinhakids.sistemaweb.exceptions.BusinessException;
 import com.example.dinhakids.sistemaweb.exceptions.NotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
