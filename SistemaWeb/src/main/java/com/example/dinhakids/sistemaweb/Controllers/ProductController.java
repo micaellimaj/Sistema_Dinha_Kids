@@ -1,22 +1,34 @@
 package com.example.dinhakids.sistemaweb.Controllers;
 
 
-import com.example.dinhakids.sistemaweb.Controllers.DTO.ProductCreateOrUpdateDTO;
-import com.example.dinhakids.sistemaweb.Models.Product;
-import com.example.dinhakids.sistemaweb.services.ProductService;
+import com.example.dinhakids.sistemaweb.DTO.CreateOrUpdate.ProductCreateOrUpdateDTO;
+import com.example.dinhakids.sistemaweb.Domain.Fornecedor;
+import com.example.dinhakids.sistemaweb.Domain.Product;
+import com.example.dinhakids.sistemaweb.Services.FornecedorService;
+import com.example.dinhakids.sistemaweb.Services.ProductService;
+import com.example.dinhakids.sistemaweb.Services.ProductServiceImpl;
+import com.example.dinhakids.sistemaweb.util.PaginacaoUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import jakarta.validation.Valid;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
+import java.util.Optional;
 
-@RestController
-@RequestMapping(value = "/dinha")
+@Controller
+@RequestMapping(value = "/produtos") //Fazer referência a table
 public class ProductController {
 
     @Autowired
     private ProductService productService;
+    @Autowired
+    private FornecedorService fornecedorService;
 
 
     //retorna todos os produtos
@@ -24,44 +36,51 @@ public class ProductController {
     public ResponseEntity<List<Product>> getProduct(){
         List<Product> products = productService.getProducts();
 
-        return ResponseEntity.ok(products);
+        return "produtos/cadastro";
     }
 
-    //cria novos produtos caso as informações sejam validas
-    @PostMapping(path = "/novo")
-    public ResponseEntity<Product> createProduct(@RequestBody @Valid ProductCreateOrUpdateDTO dto){
-        Product product = productService.createProduct(dto.getProduct());
-
-        return ResponseEntity.status(201).body(product);
-    }
-
+    
     //retorna os produtos pelo id
     @GetMapping(path = "/produtos/{id}")
     public ResponseEntity<Product> getProductById(@PathVariable String id){
         Product product = productService.getProductById(id);
-
-        return ResponseEntity.ok(product);
     }
 
     //atualiza os produtos
     @PutMapping(path = "/produtos/{id}")
     public ResponseEntity<Product> updateProduct(@PathVariable String id, String nome,int quantidade,double preco, @RequestBody @Valid ProductCreateOrUpdateDTO dto){
         Product product = dto.getProduct();
-        product.setId(id);
-        product.setNome(nome);
-        product.setQuantidade(quantidade);
-        product.setPreco(preco);
-        productService.updateProduct(product);
-
-        return ResponseEntity.status(200).body(product);
     }
 
     //deleta os produtos pelo id
-    @DeleteMapping(path = "/produtos/{id}")
+    @GetMapping(path = "/produtos/{id}")
     public ResponseEntity<Product> deleteProduct(@PathVariable String id){
         productService.deleteProduct(id);
+        return "redirect:/produtos/cadastrar";
+    }
 
-        return ResponseEntity.noContent().build();
+
+    @GetMapping("/buscar/nome")
+    public String BuscarNome(@RequestParam("nome") String nome, ModelMap model){
+        model.addAttribute("produtos", productService.buscarPorNome(nome));
+        return "produto/lista";
+    }
+
+    @GetMapping("/buscar/fornecedor")
+    public String BuscarFornecedor(@RequestParam("id") String id, ModelMap model){
+        model.addAttribute("produtos", productService.buscarPorFornecedor(id));
+        return "produto/lista";
+    }
+
+    @GetMapping("/buscar/id")
+    public String BuscarId(@RequestParam("id") String id, ModelMap model){
+        model.addAttribute("produtos", productService.buscarPorId(id));
+        return "produto/lista";
+    }
+
+    @ModelAttribute("fornecedores")
+    public List<Fornecedor> getFornecedores() {
+        return fornecedorService.buscarTodos();
     }
 
 }
