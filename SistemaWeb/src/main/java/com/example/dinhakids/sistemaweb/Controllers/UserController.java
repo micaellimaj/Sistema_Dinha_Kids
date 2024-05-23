@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/dinha")
 public class UserController {
 
     @Autowired
@@ -20,7 +20,7 @@ public class UserController {
     private ProductService productService;
 
     //retorna todos os usuarios
-    @GetMapping
+    @GetMapping("/users")
     public ResponseEntity<List<User>> getAllUsers() {
         List<User> users = userService.getUsers();
 
@@ -28,7 +28,7 @@ public class UserController {
     }
 
     //cria novos usuarios
-    @PostMapping(path = "/novo")
+    @PostMapping(path = "/cadastrar")
     public ResponseEntity<User> createUser(@RequestBody @Valid UserCreateOrUpdateDTO dto){
         User user = userService.createUser(dto.getUser());
 
@@ -36,7 +36,7 @@ public class UserController {
     }
 
     //retorna o usuario de acordo com o username
-    @GetMapping(path = "{id}") // retorna o usuario de acordo com o username
+    @GetMapping(path = "/users/{id}") // retorna o usuario de acordo com o username
     public ResponseEntity<User> getUserByUsername(@PathVariable String username) {
         User user = userService.getUserByUsername(username);
 
@@ -44,7 +44,7 @@ public class UserController {
     }
 
     //atualiza o usuario
-    @PutMapping(path = "{id}")
+    @PutMapping(path = "/users/{id}")
     public ResponseEntity<User> updateUser(@PathVariable String username, String email, @RequestBody @Valid UserCreateOrUpdateDTO dto) {
         User user = dto.getUser();
         user.setUsername(username);
@@ -55,7 +55,7 @@ public class UserController {
     }
 
     //deleta o usuario
-    @DeleteMapping(path = "{id}")
+    @DeleteMapping(path = "/users/{id}")
     public ResponseEntity<User> deleteUser(@PathVariable String username) {
         userService.deleteUser(username);
 

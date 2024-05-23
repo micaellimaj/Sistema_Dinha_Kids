@@ -20,7 +20,7 @@ public class ProductController {
 
 
     //retorna todos os produtos
-    @GetMapping
+    @GetMapping("/produtos")
     public ResponseEntity<List<Product>> getProduct(){
         List<Product> products = productService.getProducts();
 
@@ -36,7 +36,7 @@ public class ProductController {
     }
 
     //retorna os produtos pelo id
-    @GetMapping(path = "{id}")
+    @GetMapping(path = "/produtos/{id}")
     public ResponseEntity<Product> getProductById(@PathVariable String id){
         Product product = productService.getProductById(id);
 
@@ -44,7 +44,7 @@ public class ProductController {
     }
 
     //atualiza os produtos
-    @PutMapping(path = "{id}")
+    @PutMapping(path = "/produtos/{id}")
     public ResponseEntity<Product> updateProduct(@PathVariable String id, String nome,int quantidade,double preco, @RequestBody @Valid ProductCreateOrUpdateDTO dto){
         Product product = dto.getProduct();
         product.setId(id);
@@ -57,7 +57,7 @@ public class ProductController {
     }
 
     //deleta os produtos pelo id
-    @DeleteMapping(path = "{id}")
+    @DeleteMapping(path = "/produtos/{id}")
     public ResponseEntity<Product> deleteProduct(@PathVariable String id){
         productService.deleteProduct(id);
 
