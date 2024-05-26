@@ -1,3 +1,4 @@
+/*
 package com.example.dinhakids.sistemaweb.Models;
 
 import jakarta.persistence.Entity;
@@ -37,3 +38,4 @@ public class Produtos {
 
     }
 }
+*/
