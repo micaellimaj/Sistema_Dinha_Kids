@@ -1,0 +1,71 @@
+2024-05-12 19:41:52,178 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2024-05-12 19:42:33,118 [Worker-28: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.dinhakids:dinhakids:0.0.1-SNAPSHOT @ C:\Users\micae\OneDrive\Documentos\GitHub\Sistema_Dinha_Kids\dinhakids\dinhakids\pom.xml.
+2024-05-12 19:42:37,273 [Worker-28: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /dinhakids/src/main/java
+2024-05-12 19:42:37,276 [Worker-28: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /dinhakids/src/main/resources
+2024-05-12 19:42:37,292 [Worker-28: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /dinhakids/src/main/resources
+2024-05-12 19:42:37,306 [Worker-28: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /dinhakids/src/test/java
+2024-05-12 19:42:37,308 [Worker-28: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /dinhakids/src/test/resources
+2024-05-12 19:42:40,669 [Worker-28: Importing Maven projects] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 12 sec
+2024-05-12 19:42:41,684 [Worker-21: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2024-05-12 19:42:42,246 [Worker-21: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.dinhakids:dinhakids:0.0.1-SNAPSHOT @ C:\Users\micae\OneDrive\Documentos\GitHub\Sistema_Dinha_Kids\dinhakids\dinhakids\pom.xml.
+2024-05-12 19:42:42,915 [Worker-21: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /dinhakids/src/main/java
+2024-05-12 19:42:42,916 [Worker-21: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /dinhakids/src/main/resources
+2024-05-12 19:42:42,918 [Worker-21: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /dinhakids/src/main/resources
+2024-05-12 19:42:42,919 [Worker-21: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /dinhakids/src/test/java
+2024-05-12 19:42:42,921 [Worker-21: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /dinhakids/src/test/resources
+2024-05-12 19:42:43,492 [Worker-21: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0,00 sec, refresh facades takes 1,00 sec, update config takes 0,00 sec 
+2024-05-12 19:42:44,136 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-12 19:42:44,162 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-05-12 19:42:44,168 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\micae\OneDrive\Documentos\GitHub\Sistema_Dinha_Kids\dinhakids\dinhakids\src\test\resources
+2024-05-12 19:46:34,934 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-12 19:46:34,949 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-05-12 19:46:34,955 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\micae\OneDrive\Documentos\GitHub\Sistema_Dinha_Kids\dinhakids\dinhakids\src\test\resources
+2024-05-12 19:52:01,799 [Worker-30: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-12 19:52:01,814 [Worker-30: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-05-12 19:52:01,820 [Worker-30: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\micae\OneDrive\Documentos\GitHub\Sistema_Dinha_Kids\dinhakids\dinhakids\src\test\resources
+2024-05-12 19:58:30,796 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-12 19:58:30,807 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-05-12 19:58:30,811 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\micae\OneDrive\Documentos\GitHub\Sistema_Dinha_Kids\dinhakids\dinhakids\src\test\resources
+2024-05-12 20:00:01,599 [Start Help Server] INFO  org.eclipse.jetty.server.Server - jetty-12.0.6; built: 2024-01-30T02:43:24.387Z; git: 78ab6e6ba163f89cdd97f2ae0283fbb5e371cfaf; jvm 17.0.11+9-LTS
+2024-05-12 20:00:01,685 [Start Help Server] INFO  o.e.j.server.handler.ContextHandler - Started oeje8n.ContextHandler$CoreContextHandler@5def9d46{/help,/help,b=null,a=AVAILABLE,h=oeje8n.ContextHandler$CoreContextHandler$CoreToNestedHandler@18ef8682{STARTED}}
+2024-05-12 20:00:01,686 [Start Help Server] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+2024-05-12 20:00:01,735 [Start Help Server] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@51cd958e{HTTP/1.1, (http/1.1)}{127.0.0.1:51106}
+2024-05-12 20:00:01,746 [Start Help Server] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@315ddc55{STARTING}[12.0.6,sto=0] @1184561ms
+2024-05-12 20:04:44,783 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-12 20:04:44,794 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-05-12 20:04:44,799 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\micae\OneDrive\Documentos\GitHub\Sistema_Dinha_Kids\dinhakids\dinhakids\src\test\resources
+2024-05-12 20:04:49,033 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-12 20:04:49,049 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-05-12 20:04:49,056 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\micae\OneDrive\Documentos\GitHub\Sistema_Dinha_Kids\dinhakids\dinhakids\src\test\resources
+2024-05-12 20:07:45,575 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-12 20:07:45,583 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-05-12 20:07:45,587 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\micae\OneDrive\Documentos\GitHub\Sistema_Dinha_Kids\dinhakids\dinhakids\src\test\resources
+2024-05-12 20:07:49,612 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-12 20:07:49,623 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-05-12 20:07:49,630 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\micae\OneDrive\Documentos\GitHub\Sistema_Dinha_Kids\dinhakids\dinhakids\src\test\resources
+2024-05-12 20:22:12,434 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-12 20:22:12,449 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-05-12 20:22:12,452 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\micae\OneDrive\Documentos\GitHub\Sistema_Dinha_Kids\dinhakids\dinhakids\src\test\resources
+2024-05-12 20:26:09,948 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-05-12 20:26:09,971 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-12 20:26:09,979 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\micae\OneDrive\Documentos\GitHub\Sistema_Dinha_Kids\dinhakids\dinhakids\src\test\resources
+2024-05-12 20:34:42,265 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-12 20:34:42,275 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-12 20:34:42,279 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\micae\OneDrive\Documentos\GitHub\Sistema_Dinha_Kids\dinhakids\dinhakids\src\test\resources
+2024-05-12 20:34:54,576 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-12 20:34:54,584 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-12 20:34:54,592 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\micae\OneDrive\Documentos\GitHub\Sistema_Dinha_Kids\dinhakids\dinhakids\src\test\resources
+2024-05-12 20:41:46,907 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-12 20:41:46,917 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-12 20:41:46,924 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\micae\OneDrive\Documentos\GitHub\Sistema_Dinha_Kids\dinhakids\dinhakids\src\test\resources
+2024-05-12 20:41:54,068 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-12 20:41:54,078 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-12 20:41:54,085 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\micae\OneDrive\Documentos\GitHub\Sistema_Dinha_Kids\dinhakids\dinhakids\src\test\resources
+2024-05-12 20:42:06,950 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-12 20:42:06,959 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-12 20:42:06,965 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\micae\OneDrive\Documentos\GitHub\Sistema_Dinha_Kids\dinhakids\dinhakids\src\test\resources
+2024-05-12 20:43:01,705 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-12 20:43:01,715 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-12 20:43:01,720 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\micae\OneDrive\Documentos\GitHub\Sistema_Dinha_Kids\dinhakids\dinhakids\src\test\resources
+2024-05-12 20:44:32,950 [Stop Help Server] INFO  org.eclipse.jetty.server.Server - Stopped oejs.Server@315ddc55{STOPPING}[12.0.6,sto=0]
+2024-05-12 20:44:32,959 [Stop Help Server] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@51cd958e{HTTP/1.1, (http/1.1)}{127.0.0.1:0}
