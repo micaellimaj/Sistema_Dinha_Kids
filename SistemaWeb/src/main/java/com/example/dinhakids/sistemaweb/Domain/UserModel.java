@@ -1,4 +1,4 @@
-package com.example.dinhakids.sistemaweb.Models;
+/*package com.example.dinhakids.sistemaweb.Models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -39,3 +39,4 @@ public class UserModel {
 
     }
 }
+*/

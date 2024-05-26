@@ -38,6 +38,21 @@ public class UserController {
         return "usuarios/cadastro";
     }
 
+    // PAGE CADASTRAR       ----------------------------------
+    @PostMapping("/dashboard")
+    public String handleRegistrationForm(@ModelAttribute("user") User user, BindingResult result) {
+        if (result.hasErrors()) {
+            // Trate os erros de validação aqui
+            return "cadastrar"; // Retorna a mesma página para mostrar mensagens de erro
+        }
+        // Processa o usuário aqui (por exemplo, salva no banco de dados)
+        userService.save(user); // Supondo que você tenha um método save no UserService
+        return "redirect:/dashboard"; // Redireciona para uma página de sucesso
+    }
+
+    // PAGE CADASTRAR       ----------------------------------
+
+
     //retorna o usuario de acordo com o username
     @GetMapping(path = "/users/{id}") // retorna o usuario de acordo com o username
     public ResponseEntity<User> getUserByUsername(@PathVariable String username) {
