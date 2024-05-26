@@ -384,7 +384,7 @@ xmlns:th="http://www.thymeleaf.org">
                                             <div class="text-center">
                                                 <h1 class="h4 text-gray-900 mb-4">Adicione o produto aqui!</h1>
                                             </div>
-                                            <form class="user" method="POST" action="/dinha">
+                                            <form class="user" method="POST" action="/produtos/salvar">
                                                 <div class="form-group row">
                                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                                         <input type="text" class="form-control form-control-user" name="nome"placeholder="nome do produto">
@@ -459,7 +459,7 @@ xmlns:th="http://www.thymeleaf.org">
 
                                     <tbody>
                                     <!-- Model   $ Controller - nome que vai está se referindo a isso daqui -->
-                                    <tr th:each="produtos : ${ProdutosController}">
+                                    <tr th:each="produtos : ${produtos}">
                                         <td th:text="${produtos.nome}"></td>
                                         <td th:text="${produtos.quantidade}"></td>
                                         <td th:text="${produtos.preco}"></td>

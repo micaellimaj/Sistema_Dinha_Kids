@@ -31,6 +31,19 @@ public class UserController {
         return "usuarios/listar";
     }
 
+    // PAGE CADASTRAR       ----------------------------------
+    // Responsável por pegar os dados do form definido na página cadastrar, encontrado pelo nome "dashboard"
+    @PostMapping("/dashboard")
+    public String handleRegistrationForm(@ModelAttribute("user") User user, BindingResult result) {
+        if (result.hasErrors()) {
+            // Trate os erros de validação aqui
+            return "cadastrar"; // Retorna a mesma página para mostrar mensagens de erro
+        }
+        // Processa o usuário aqui (por exemplo, salva no banco de dados)
+        userService.save(user); // Supondo que você tenha um método save no UserService
+        return "redirect:/dashboard"; // Redireciona para uma página de sucesso
+    }
+
     //cria novos usuarios
     @PostMapping(path = "/cadastrar")
     public ResponseEntity<User> createUser(@RequestBody @Valid UserCreateOrUpdateDTO dto){
@@ -48,6 +61,8 @@ public class UserController {
         attr.addFlashAttribute("sucesso", "Usuario Salvo com sucesso!");
         return "usuarios/cadastrar";
     }
+
+
 
     //atualiza o usuario
     @PostMapping(path = "/users/{id}")
