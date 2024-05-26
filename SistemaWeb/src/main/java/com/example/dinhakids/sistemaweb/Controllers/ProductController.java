@@ -39,7 +39,28 @@ public class ProductController {
         return "produtos/cadastro";
     }
 
-    
+    // CONEXÃO 1 FORM TABLES ----------------------------
+    @PostMapping("/produtos/salvar")
+    public ResponseEntity<Product> saveProduct(@RequestBody Product product) {
+        // Validar e salvar o produto utilizando productService
+        productService.saveProduct(product);
+        // Retornar uma resposta adequada (por exemplo, redirecionar para outra página)
+        return ResponseEntity.ok(product);
+    }
+    // CONEXÃO 1 FORM TABLES ----------------------------
+
+
+    // LISTA 1 FORM TABLES ----------------------------
+    @GetMapping("/produtos")
+    public String listarProdutos(Model model) {
+        List<Product> produtos = productService.getAllProducts(); // Supondo que este método retorne a lista de produtos
+        model.addAttribute("produtos", produtos);
+        return "tables"; // Assumindo que "tables" é o nome da sua view
+    }
+
+    // LISTA 1 FORM TABLES ----------------------------
+
+
     //retorna os produtos pelo id
     @GetMapping(path = "/produtos/{id}")
     public ResponseEntity<Product> getProductById(@PathVariable String id){
