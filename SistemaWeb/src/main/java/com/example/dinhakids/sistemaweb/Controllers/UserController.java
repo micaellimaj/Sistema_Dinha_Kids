@@ -39,6 +39,7 @@ public class UserController {
     }
 
     // PAGE CADASTRAR       ----------------------------------
+    // Responsável por pegar os dados do form definido na página cadastrar, encontrado pelo nome "dashboard"
     @PostMapping("/dashboard")
     public String handleRegistrationForm(@ModelAttribute("user") User user, BindingResult result) {
         if (result.hasErrors()) {
@@ -50,7 +51,6 @@ public class UserController {
         return "redirect:/dashboard"; // Redireciona para uma página de sucesso
     }
 
-    // PAGE CADASTRAR       ----------------------------------
 
 
     //retorna o usuario de acordo com o username

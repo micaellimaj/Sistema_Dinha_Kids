@@ -40,6 +40,7 @@ public class ProductController {
     }
 
     // CONEXÃO 1 FORM TABLES ----------------------------
+    // Responsavel pela inserção dos dados no form, ele salva, chamado pelo metodo definido na página web como "/produtos/salvar"
     @PostMapping("/produtos/salvar")
     public ResponseEntity<Product> saveProduct(@RequestBody Product product) {
         // Validar e salvar o produto utilizando productService
@@ -47,10 +48,12 @@ public class ProductController {
         // Retornar uma resposta adequada (por exemplo, redirecionar para outra página)
         return ResponseEntity.ok(product);
     }
-    // CONEXÃO 1 FORM TABLES ----------------------------
+
 
 
     // LISTA 1 FORM TABLES ----------------------------
+    // Responsável por trazer uma lista dos dados direto do banco de dados, chamando na página table.html "produtos" definido aqui
+
     @GetMapping("/produtos")
     public String listarProdutos(Domain domain) {
         List<Product> produtos = productService.getAllProducts(); // Supondo que este método retorne a lista de produtos
@@ -58,7 +61,7 @@ public class ProductController {
         return "tables"; // Assumindo que "tables" é o nome da sua view
     }
 
-    // LISTA 1 FORM TABLES ----------------------------
+
 
 
     //retorna os produtos pelo id
