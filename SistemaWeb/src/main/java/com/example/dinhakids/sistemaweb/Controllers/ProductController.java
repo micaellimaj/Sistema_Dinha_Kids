@@ -52,9 +52,9 @@ public class ProductController {
 
     // LISTA 1 FORM TABLES ----------------------------
     @GetMapping("/produtos")
-    public String listarProdutos(Model model) {
+    public String listarProdutos(Domain domain) {
         List<Product> produtos = productService.getAllProducts(); // Supondo que este método retorne a lista de produtos
-        model.addAttribute("produtos", produtos);
+        domain.addAttribute("produtos", produtos);
         return "tables"; // Assumindo que "tables" é o nome da sua view
     }
 
