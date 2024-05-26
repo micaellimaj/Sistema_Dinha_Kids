@@ -27,8 +27,6 @@ public class ProductController {
 
     @Autowired
     private ProductService productService;
-    @Autowired
-    private FornecedorService fornecedorService;
 
 
     //retorna todos os produtos
@@ -36,7 +34,7 @@ public class ProductController {
     public ResponseEntity<List<Product>> getProduct(){
         List<Product> products = productService.getProducts();
 
-        return "produtos/cadastro";
+        return ResponseEntity.ok(products)
     }
 
     
@@ -44,43 +42,23 @@ public class ProductController {
     @GetMapping(path = "/produtos/{id}")
     public ResponseEntity<Product> getProductById(@PathVariable String id){
         Product product = productService.getProductById(id);
+        return ResponseEntity.status(201).body(product);
     }
 
     //atualiza os produtos
     @PutMapping(path = "/produtos/{id}")
     public ResponseEntity<Product> updateProduct(@PathVariable String id, String nome,int quantidade,double preco, @RequestBody @Valid ProductCreateOrUpdateDTO dto){
         Product product = dto.getProduct();
+        return ResponseEntity.status(201).body(product);
     }
 
     //deleta os produtos pelo id
     @GetMapping(path = "/produtos/{id}")
     public ResponseEntity<Product> deleteProduct(@PathVariable String id){
         productService.deleteProduct(id);
-        return "redirect:/produtos/cadastrar";
+        return ResponseEntity.noContent().build();
     }
 
 
-    @GetMapping("/buscar/nome")
-    public String BuscarNome(@RequestParam("nome") String nome, ModelMap model){
-        model.addAttribute("produtos", productService.buscarPorNome(nome));
-        return "produto/lista";
-    }
-
-    @GetMapping("/buscar/fornecedor")
-    public String BuscarFornecedor(@RequestParam("id") String id, ModelMap model){
-        model.addAttribute("produtos", productService.buscarPorFornecedor(id));
-        return "produto/lista";
-    }
-
-    @GetMapping("/buscar/id")
-    public String BuscarId(@RequestParam("id") String id, ModelMap model){
-        model.addAttribute("produtos", productService.buscarPorId(id));
-        return "produto/lista";
-    }
-
-    @ModelAttribute("fornecedores")
-    public List<Fornecedor> getFornecedores() {
-        return fornecedorService.buscarTodos();
-    }
 
 }
