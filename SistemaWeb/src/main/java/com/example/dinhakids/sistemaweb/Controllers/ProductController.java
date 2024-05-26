@@ -34,7 +34,7 @@ public class ProductController {
     public ResponseEntity<List<Product>> getProduct(){
         List<Product> products = productService.getProducts();
 
-        return ResponseEntity.ok(products)
+        return ResponseEntity.ok(products);
     }
 
     // CONEXÃO 1 FORM TABLES ----------------------------
