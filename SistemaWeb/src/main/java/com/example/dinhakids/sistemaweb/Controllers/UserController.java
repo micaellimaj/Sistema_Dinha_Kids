@@ -12,6 +12,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.sql.DataTruncation;
 import java.util.List;
 import java.util.UUID;
 
@@ -40,7 +41,7 @@ public class UserController {
 
     //retorna o usuario de acordo com o username
     @GetMapping(path = "/users/{id}") // retorna o usuario de acordo com o username
-    public ResponseEntity<User> getUserByUsername(@PathVariable String username) {
+    public ResponseEntity<User> getUserByUsername(@PathVariable String username, RedirectAttributes attr) {
         User user = userService.getUserByUsername(username);
 
         userService.salvar(user);
