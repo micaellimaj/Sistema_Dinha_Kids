@@ -4,7 +4,6 @@ import com.example.dinhakids.sistemaweb.Domain.Product;
 import com.example.dinhakids.sistemaweb.Repositorio.ProductRepository;
 import com.example.dinhakids.sistemaweb.exceptions.BusinessException;
 import com.example.dinhakids.sistemaweb.exceptions.NotFoundException;
-import com.example.dinhakids.sistemaweb.util.PaginacaoUtil;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,10 +41,17 @@ public class ProductService {
 
         //procura o produto pelo id
         public Product getProductById(String id) {
-            Optional<Product> productExists = productRepository.findById(id);
+            Optional<Product> productExists = productRepository.findProductById(id);
 
             return productExists.orElseThrow(() -> new NotFoundException("Produto não encontrado"));
         }
+
+        //procura o produto pelo nome
+         public Product getProductByName(String nome) {
+        Optional<Product> productExists = productRepository.findProductByNome(nome);
+
+        return productExists.orElseThrow(() -> new NotFoundException("Produto não encontrado"));
+         }
 
         //atualiza o produto
         @Transactional(rollbackOn = Exception.class)

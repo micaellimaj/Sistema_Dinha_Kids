@@ -2,27 +2,18 @@ package com.example.dinhakids.sistemaweb.Controllers;
 
 
 import com.example.dinhakids.sistemaweb.DTO.CreateOrUpdate.ProductCreateOrUpdateDTO;
-import com.example.dinhakids.sistemaweb.Domain.Fornecedor;
 import com.example.dinhakids.sistemaweb.Domain.Product;
-import com.example.dinhakids.sistemaweb.Services.FornecedorService;
 import com.example.dinhakids.sistemaweb.Services.ProductService;
-import com.example.dinhakids.sistemaweb.Services.ProductServiceImpl;
-import com.example.dinhakids.sistemaweb.util.PaginacaoUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import jakarta.validation.Valid;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
-import java.util.Optional;
 
 @Controller
-@RequestMapping(value = "/produtos") //Fazer referência a table
+@RequestMapping
 public class ProductController {
 
     @Autowired
@@ -37,32 +28,17 @@ public class ProductController {
         return ResponseEntity.ok(products);
     }
 
-    // CONEXÃO 1 FORM TABLES ----------------------------
-    // Responsavel pela inserção dos dados no form, ele salva, chamado pelo metodo definido na página web como "/produtos/salvar"
-    @PostMapping("/produtos/salvar")
-    public ResponseEntity<Product> saveProduct(@RequestBody Product product) {
-        // Validar e salvar o produto utilizando productService
-        productService.saveProduct(product);
-        // Retornar uma resposta adequada (por exemplo, redirecionar para outra página)
-        return ResponseEntity.ok(product);
-    }
-
-
-
-    // LISTA 1 FORM TABLES ----------------------------
-    // Responsável por trazer uma lista dos dados direto do banco de dados, chamando na página table.html "produtos" definido aqui
-
-    @GetMapping("/produtos")
-    public String listarProdutos(Domain domain) {
-        List<Product> produtos = productService.getAllProducts(); // Supondo que este método retorne a lista de produtos
-        domain.addAttribute("produtos", produtos);
-        return "tables"; // Assumindo que "tables" é o nome da sua view
-    }
-    
     //retorna os produtos pelo id
     @GetMapping(path = "/produtos/{id}")
     public ResponseEntity<Product> getProductById(@PathVariable String id){
         Product product = productService.getProductById(id);
+        return ResponseEntity.status(201).body(product);
+    }
+
+    //retorna os produtos pelo nome
+    @GetMapping(path = "/produtos/nome")
+    public ResponseEntity<Product> getProductByName(@PathVariable String nome){
+        Product product = productService.getProductByName(nome);
         return ResponseEntity.status(201).body(product);
     }
 

@@ -17,9 +17,11 @@ import java.util.List;
 public class Fornecedor {
 
     @Id
+    private String id;
+
     @NotBlank(message = "Informe um nome.")
     @Size(min = 3, max = 60, message = "o nome do fornecedor deve ter entre {min} e {max} caracteres.")
-    private int nome;
+    private String nome;
 
     @OneToMany(mappedBy = "fornecedor")
     private List<Product> products;
