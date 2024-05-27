@@ -49,7 +49,7 @@ public class UserController {
     public ResponseEntity<User> createUser(@RequestBody @Valid UserCreateOrUpdateDTO dto){
         User user = userService.createUser(dto.getUser());
 
-        return "usuarios/cadastro";
+        return "dashboard"; // como estava antes: "usuarios/cadastro"
     }
 
     //retorna o usuario de acordo com o username
@@ -57,7 +57,7 @@ public class UserController {
     public ResponseEntity<User> getUserByUsername(@PathVariable String username) {
         User user = userService.getUserByUsername(username);
 
-        return "usuarios/cadastrar";
+        return "dashboard"; // como estava antes: ""usuarios/cadastrar""
     }
 
     //retorna o usuario de acordo com o nome
@@ -65,7 +65,7 @@ public class UserController {
     public ResponseEntity<User> getUserByName(@PathVariable String nome) {
         User user = userService.getUserByName(nome);
 
-        return "usuarios/cadastrar";
+        return "dashboard"; // como estava antes "usuarios/cadastrar"
     }
 
 
@@ -78,7 +78,7 @@ public class UserController {
         user.setEmail(email);
         userService.updateUser(user);
 
-        return "usuarios/editar";
+        return "dashboard"; // como estava antes: "usuarios/editar"
     }
 
     //deleta o usuario
@@ -86,7 +86,7 @@ public class UserController {
     public ResponseEntity<User> deleteUser(@PathVariable String username) {
         userService.deleteUser(username);
 
-        return "usuarios/cadastrar";
+        return "dashbaord"; // como estava antes: "usuarios/cadastrar"
     }
 
 }
