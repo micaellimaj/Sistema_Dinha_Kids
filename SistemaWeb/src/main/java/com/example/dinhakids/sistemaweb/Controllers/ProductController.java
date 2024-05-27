@@ -2,27 +2,18 @@ package com.example.dinhakids.sistemaweb.Controllers;
 
 
 import com.example.dinhakids.sistemaweb.DTO.CreateOrUpdate.ProductCreateOrUpdateDTO;
-import com.example.dinhakids.sistemaweb.Domain.Fornecedor;
 import com.example.dinhakids.sistemaweb.Domain.Product;
-import com.example.dinhakids.sistemaweb.Services.FornecedorService;
 import com.example.dinhakids.sistemaweb.Services.ProductService;
-import com.example.dinhakids.sistemaweb.Services.ProductServiceImpl;
-import com.example.dinhakids.sistemaweb.util.PaginacaoUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import jakarta.validation.Valid;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
-import java.util.Optional;
 
 @Controller
-@RequestMapping(value = "/produtos") //Fazer referência a table
+@RequestMapping
 public class ProductController {
 
     @Autowired
@@ -34,14 +25,20 @@ public class ProductController {
     public ResponseEntity<List<Product>> getProduct(){
         List<Product> products = productService.getProducts();
 
-        return ResponseEntity.ok(products)
+        return ResponseEntity.ok(products);
     }
 
-    
     //retorna os produtos pelo id
     @GetMapping(path = "/produtos/{id}")
     public ResponseEntity<Product> getProductById(@PathVariable String id){
         Product product = productService.getProductById(id);
+        return ResponseEntity.status(201).body(product);
+    }
+
+    //retorna os produtos pelo nome
+    @GetMapping(path = "/produtos/nome")
+    public ResponseEntity<Product> getProductByName(@PathVariable String nome){
+        Product product = productService.getProductByName(nome);
         return ResponseEntity.status(201).body(product);
     }
 

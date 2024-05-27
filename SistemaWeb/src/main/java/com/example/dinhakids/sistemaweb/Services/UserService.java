@@ -19,8 +19,9 @@ public class UserService {
 
     public List<User> getUsers() { return userRepository.findAll(); }
 
+    // Verifica e cria novos usuarios
     @Transactional(rollbackOn = Exception.class)
-    public User createUser(User user) { // Verifica e cria novos usuarios
+    public User createUser(User user) {
         Optional<User> userExists = userRepository.findByUsername(user.getUsername());
         if (userExists.isPresent()) {
             throw new BusinessException("Já existe um usuário com esse username");
@@ -33,14 +34,23 @@ public class UserService {
         return user;
     }
 
-    public User getUserByUsername(String username) { // procura o usuario pelo username
+    // procura o usuario pelo username
+    public User getUserByUsername(String username) {
         Optional<User> userExists = userRepository.findByUsername(username);
 
         return userExists.orElseThrow(()  -> new NotFoundException("Usuário não encontrado"));
     }
 
+    // procura o usuario pelo nome
+    public User getUserByName(String nome) {
+        Optional<User> userExists = userRepository.findByName(nome);
+
+        return userExists.orElseThrow(()  -> new NotFoundException("Usuário não encontrado"));
+    }
+
+    // verifica se ja existe um username/email iguais aos que o usuario deseja atualizar
     @Transactional(rollbackOn = Exception.class)
-    public User updateUser(User user) { // verifica se ja existe um username/email iguais aos que o usuario deseja atualizar
+    public User updateUser(User user) {
         Optional<User> userExists = userRepository.findByUsername(user.getUsername());
         if (userExists.isPresent() && !userExists.get().getUsername().equals(user.getUsername())) {
             throw new BusinessException("Já existe um usuario com o username informado");
@@ -55,7 +65,8 @@ public class UserService {
         return user;
     }
 
-    public void deleteUser(String username) { // deleta o usuario
+    // deleta o usuario
+    public void deleteUser(String username) {
         Optional<User> userExists = userRepository.findByUsername(username);
 
         User user = userExists.orElseThrow(() -> new NotFoundException("Usuario não encontrado"));
