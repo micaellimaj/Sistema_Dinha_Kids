@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\micae\OneDrive\Documentos\GitHub\Sistema_Dinha_Kids\SistemaWeb"/>
+			<item value="C:\Users\micae\OneDrive\Documentos\GitHub\Sistema_Dinha_Kids\SistemaWeb\src"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[name]"/>
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+	</section>
+</section>
