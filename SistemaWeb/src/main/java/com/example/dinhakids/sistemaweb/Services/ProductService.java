@@ -24,7 +24,7 @@ public class ProductService {
         //verifica e cria novos produtos
         @Transactional(rollbackOn = Exception.class)
         public Product createProduct(Product product) {
-            Optional<Product> NameExists = productRepository.findProductByNome(product.getNome());
+            Optional<Product> NameExists = productRepository.findProductByName(product.getName());
             if(NameExists.isPresent()){
                 throw new BusinessException("Já existe um produto com o Nome informado");
             }
@@ -48,7 +48,7 @@ public class ProductService {
 
         //procura o produto pelo nome
          public Product getProductByName(String nome) {
-        Optional<Product> productExists = productRepository.findProductByNome(nome);
+        Optional<Product> productExists = productRepository.findProductByName(nome);
 
         return productExists.orElseThrow(() -> new NotFoundException("Produto não encontrado"));
          }
@@ -56,12 +56,12 @@ public class ProductService {
         //atualiza o produto
         @Transactional(rollbackOn = Exception.class)
         public Product updateProduct(Product product) {
-            Optional<Product> idExists = productRepository.findProductByNome(product.getNome());
+            Optional<Product> idExists = productRepository.findProductByName(product.getName());
             if(idExists.isPresent() && !idExists.get().getId().equals(product.getId())){
                 throw new BusinessException("Já existe um produto com o id informado");
             }
 
-            Optional<Product> NameExists = productRepository.findProductByNome(product.getNome());
+            Optional<Product> NameExists = productRepository.findProductByName(product.getName());
             if(NameExists.isPresent() && !NameExists.get().getId().equals(product.getId())){
                 throw new BusinessException("Já existe um produto com o nome informado");
             }

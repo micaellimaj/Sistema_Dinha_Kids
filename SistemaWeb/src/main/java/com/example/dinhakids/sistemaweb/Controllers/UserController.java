@@ -1,20 +1,18 @@
 package com.example.dinhakids.sistemaweb.Controllers;
 
-import com.example.dinhakids.sistemaweb.DTO.CreateOrUpdate.UserCreateOrUpdateDTO;
+import com.example.dinhakids.sistemaweb.DTO.CreateOrUpdate.UserCreateDTO;
+import com.example.dinhakids.sistemaweb.DTO.CreateOrUpdate.UserUpdateDTO;
 import com.example.dinhakids.sistemaweb.Domain.User;
-import com.example.dinhakids.sistemaweb.Services.ProductService;
+import com.example.dinhakids.sistemaweb.Repositorio.UserRepository;
+import com.example.dinhakids.sistemaweb.Services.PasswordEncoderService;
 import com.example.dinhakids.sistemaweb.Services.UserService;
+import com.example.dinhakids.sistemaweb.exceptions.UsernameNotFoundException;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-import java.sql.DataTruncation;
 import java.util.List;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/dinha")
@@ -23,55 +21,65 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private PasswordEncoderService passwordEncoderService;
+
     //retorna todos os usuarios
     @GetMapping("/users")
     public ResponseEntity<List<User>> getAllUsers() {
         List<User> users = userService.getUsers();
 
-        return "usuarios/listar";
+        return new ResponseEntity<>(users, HttpStatus.OK);
     }
 
     //cria novos usuarios
     @PostMapping(path = "/cadastrar")
-    public ResponseEntity<User> createUser(@RequestBody @Valid UserCreateOrUpdateDTO dto){
-        User user = userService.createUser(dto.getUser());
+    public ResponseEntity<User> createUser(@RequestBody UserCreateDTO dto){
+        User user = new User();
 
-        return "usuarios/cadastro";
+        user.setUsername(dto.getUsername());
+        user.setName(dto.getName());
+        user.setEmail(dto.getEmail());
+
+        dto.setPasswordEncoderService(passwordEncoderService);
+        dto.encodePassword();
+
+        user.setPassword(dto.getPassword());
+        userRepository.save(user);
+
+        return ResponseEntity.status(201).body(user);
     }
 
     //retorna o usuario de acordo com o username
-    @GetMapping(path = "/users/{id}")
+    @GetMapping(path = "/users/{username}")
     public ResponseEntity<User> getUserByUsername(@PathVariable String username) {
         User user = userService.getUserByUsername(username);
 
-        return "usuarios/cadastrar";
+        return ResponseEntity.ok(user);
     }
 
-    //retorna o usuario de acordo com o nome
-    @GetMapping(path = "/users/{id}")
-    public ResponseEntity<User> getUserByName(@PathVariable String nome) {
-        User user = userService.getUserByName(nome);
-
-        return "usuarios/cadastrar";
-    }
 
     //atualiza o usuario
-    @PostMapping(path = "/users/{id}")
-    public ResponseEntity<User> updateUser(@PathVariable String username, String email, @RequestBody @Valid UserCreateOrUpdateDTO dto) {
-        User user = dto.getUser();
-        user.setUsername(username);
-        user.setEmail(email);
-        userService.updateUser(user);
+    @PutMapping(path = "/users/{username}")
+    public ResponseEntity<User> updateUser(@PathVariable String username, @RequestBody @Valid UserUpdateDTO dto, UserService userService, PasswordEncoderService passwordEncoderService) {
+        User user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new UsernameNotFoundException("Usuario não encontrado"));
 
-        return "usuarios/editar";
+        dto.updateUser(user, userService, passwordEncoderService);
+        userRepository.save(user);
+
+        return ResponseEntity.ok(user);
     }
 
     //deleta o usuario
-    @DeleteMapping(path = "/users/{id}")
+    @DeleteMapping(path = "/users/{username}")
     public ResponseEntity<User> deleteUser(@PathVariable String username) {
         userService.deleteUser(username);
 
-        return "usuarios/cadastrar";
+        return ResponseEntity.noContent().build();
     }
 
 }

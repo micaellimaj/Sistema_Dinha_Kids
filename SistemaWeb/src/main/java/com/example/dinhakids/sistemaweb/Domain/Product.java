@@ -21,7 +21,7 @@ public class Product {
     @NotBlank(message = "Nome do produto não informado")
     @Length(max = 100, message = "Nome do produto não pode exceder 100 caracteres")
     @Column(length = 100, nullable = false)
-    private String nome;
+    private String name;
 
     @Column(nullable = false)
     private int quantidade;
