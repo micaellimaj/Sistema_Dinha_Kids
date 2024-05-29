@@ -8,7 +8,6 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ProductService {
@@ -24,14 +23,13 @@ public class ProductService {
         //verifica e cria novos produtos
         @Transactional(rollbackOn = Exception.class)
         public Product createProduct(Product product) {
-            Optional<Product> NameExists = productRepository.findProductByName(product.getName());
-            if(NameExists.isPresent()){
-                throw new BusinessException("Já existe um produto com o Nome informado");
+
+            if(productRepository.existsById(product.getId())) {
+                throw new BusinessException("Já existe um produto com a Referência informada");
             }
 
-            Optional<Product> IdExists = productRepository.findProductById(product.getId());
-            if(IdExists.isPresent()){
-                throw new BusinessException("Já existe um produto com o ID informado");
+            if(productRepository.existsByName(product.getName())){
+                throw new BusinessException("Já existe um produto com o nome informado");
             }
 
             productRepository.save(product);
@@ -41,29 +39,23 @@ public class ProductService {
 
         //procura o produto pelo id
         public Product getProductById(String id) {
-            Optional<Product> productExists = productRepository.findProductById(id);
-
-            return productExists.orElseThrow(() -> new NotFoundException("Produto não encontrado"));
+            return productRepository.findById(id)
+                    .orElseThrow(() -> new NotFoundException("Produto não encontrado"));
         }
 
         //procura o produto pelo nome
-         public Product getProductByName(String nome) {
-        Optional<Product> productExists = productRepository.findProductByName(nome);
-
-        return productExists.orElseThrow(() -> new NotFoundException("Produto não encontrado"));
+         public Product getProductByName(String name) {
+             return productRepository.findByName(name)
+                     .orElseThrow(() -> new NotFoundException("Produto não encontrado"));
          }
 
         //atualiza o produto
         @Transactional(rollbackOn = Exception.class)
         public Product updateProduct(Product product) {
-            Optional<Product> idExists = productRepository.findProductByName(product.getName());
-            if(idExists.isPresent() && !idExists.get().getId().equals(product.getId())){
-                throw new BusinessException("Já existe um produto com o id informado");
-            }
 
-            Optional<Product> NameExists = productRepository.findProductByName(product.getName());
-            if(NameExists.isPresent() && !NameExists.get().getId().equals(product.getId())){
-                throw new BusinessException("Já existe um produto com o nome informado");
+            if(productRepository.existsByIdAndName(product.getId(), product.getName()) &&
+                !productRepository.findById(product.getId()).get().equals(product)){
+                throw new BusinessException("Já existe um produto com a referência e o nome informados");
             }
 
             productRepository.save(product);
@@ -72,9 +64,9 @@ public class ProductService {
 
         //deleta o produto pelo id
         public void deleteProduct(String id) {
-            Optional<Product> productExists = productRepository.findById(id);
 
-            Product product= productExists.orElseThrow(() -> new NotFoundException("Produto não encontrado"));
+            Product product= productRepository.findById(id)
+                    .orElseThrow(() -> new NotFoundException("Produto não encontrado"));
             productRepository.delete(product);
         }
 

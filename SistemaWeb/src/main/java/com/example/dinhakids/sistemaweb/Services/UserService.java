@@ -22,7 +22,7 @@ public class UserService {
     // Verifica e cria novos usuarios
     @Transactional(rollbackOn = Exception.class)
     public User createUser(User user) {
-        Optional<User> userExists = userRepository.findByUsername(user.getUsername());
+        Optional<User> userExists = userRepository.findByUserName(user.getUserName());
         if (userExists.isPresent()) {
             throw new BusinessException("Já existe um usuário com esse username");
         }
@@ -35,8 +35,8 @@ public class UserService {
     }
 
     // procura o usuario pelo username
-    public User getUserByUsername(String username) {
-        Optional<User> userExists = userRepository.findByUsername(username);
+    public User getUserByUsername(String userName) {
+        Optional<User> userExists = userRepository.findByUserName(userName);
 
         return userExists.orElseThrow(()  -> new NotFoundException("Usuário não encontrado"));
     }
@@ -51,8 +51,8 @@ public class UserService {
     // verifica se ja existe um username/email iguais aos que o usuario deseja atualizar
     @Transactional(rollbackOn = Exception.class)
     public User updateUser(User user) {
-        Optional<User> userExists = userRepository.findByUsername(user.getUsername());
-        if (userExists.isPresent() && !userExists.get().getUsername().equals(user.getUsername())) {
+        Optional<User> userExists = userRepository.findByUserName(user.getUserName());
+        if (userExists.isPresent() && !userExists.get().getUserName().equals(user.getUserName())) {
             throw new BusinessException("Já existe um usuario com o username informado");
         }
 
@@ -66,8 +66,8 @@ public class UserService {
     }
 
     // deleta o usuario
-    public void deleteUser(String username) {
-        Optional<User> userExists = userRepository.findByUsername(username);
+    public void deleteUser(String userName) {
+        Optional<User> userExists = userRepository.findByUserName(userName);
 
         User user = userExists.orElseThrow(() -> new NotFoundException("Usuario não encontrado"));
         userRepository.delete(user);

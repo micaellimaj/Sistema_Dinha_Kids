@@ -22,7 +22,7 @@ public class UserCreateDTO {
 
     @NotBlank(message = "Username do usuário não informado")
     @Length(max = 30, message = "Username do usuário não pode exceder 30 caracteres")
-    private String username;
+    private String userName;
 
     @NotBlank(message = "E-mail do usuário não informado")
     @Email(message = "E-mail inválido")
@@ -50,10 +50,10 @@ public class UserCreateDTO {
 
         user.setId(id);
         user.setName(name);
-        user.setUsername(username);
+        user.setUserName(userName);
         user.setEmail(email);
         user.setPassword(passwordEncoderService.encode(password));
-        user.setCriadoEm(LocalDateTime.now());
+        user.setCreatedAt(LocalDateTime.now());
 
         return user;
 

@@ -2,8 +2,7 @@ package com.example.dinhakids.sistemaweb.Controllers;
 
 import com.example.dinhakids.sistemaweb.DTO.StandardErrorDTO;
 import com.example.dinhakids.sistemaweb.DTO.ValidationErrorDTO;
-import com.example.dinhakids.sistemaweb.exceptions.BusinessException;
-import com.example.dinhakids.sistemaweb.exceptions.NotFoundException;
+import com.example.dinhakids.sistemaweb.exceptions.*;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -49,6 +48,26 @@ public class ExceptionHandlerController {
     @ExceptionHandler(NotFoundException.class)
     public ResponseEntity<StandardErrorDTO> notFoundException(NotFoundException e, HttpServletRequest request) {
         StandardErrorDTO err = new StandardErrorDTO(System.currentTimeMillis(), HttpStatus.NOT_FOUND.value(), "Not Found", e.getMessage(), request.getRequestURI());
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(err);
+    }
+    @ExceptionHandler(PasswordEncodingException.class)
+    public ResponseEntity<StandardErrorDTO> passwordEncodingException(PasswordEncodingException e, HttpServletRequest request) {
+        StandardErrorDTO err = new StandardErrorDTO(System.currentTimeMillis(), HttpStatus.NOT_FOUND.value(), "Not Found", e.getMessage(), request.getRequestURI());
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(err);
+    }
+    @ExceptionHandler(UsernameAlreadyExistsException.class)
+    public ResponseEntity<StandardErrorDTO> usernameAlreadyExistsException(UsernameAlreadyExistsException e, HttpServletRequest request) {
+        StandardErrorDTO err = new StandardErrorDTO(System.currentTimeMillis(), HttpStatus.BAD_REQUEST.value(), "Username already exists", e.getMessage(), request.getRequestURI());
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(err);
+    }
+    @ExceptionHandler(UsernameNotFoundException.class)
+    public ResponseEntity<StandardErrorDTO> usernameNotFound(UsernameNotFoundException e, HttpServletRequest request) {
+        StandardErrorDTO err = new StandardErrorDTO(System.currentTimeMillis(), HttpStatus.NOT_FOUND.value(), "Username Not Found", e.getMessage(), request.getRequestURI());
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(err);
+    }
+    @ExceptionHandler(ProductNotFoundException.class)
+    public ResponseEntity<StandardErrorDTO> productNotFound(ProductNotFoundException e, HttpServletRequest request) {
+        StandardErrorDTO err = new StandardErrorDTO(System.currentTimeMillis(), HttpStatus.NOT_FOUND.value(), "Product Not Found", e.getMessage(), request.getRequestURI());
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(err);
     }
 }
