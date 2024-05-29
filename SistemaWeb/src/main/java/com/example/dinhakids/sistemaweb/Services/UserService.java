@@ -42,8 +42,8 @@ public class UserService {
     }
 
     // procura o usuario pelo nome
-    public User getUserByName(String nome) {
-        Optional<User> userExists = userRepository.findByName(nome);
+    public User getUserByName(String name) {
+        Optional<User> userExists = userRepository.findByName(name);
 
         return userExists.orElseThrow(()  -> new NotFoundException("Usuário não encontrado"));
     }

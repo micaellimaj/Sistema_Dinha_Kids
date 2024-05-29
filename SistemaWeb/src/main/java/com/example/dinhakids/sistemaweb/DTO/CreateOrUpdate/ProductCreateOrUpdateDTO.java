@@ -24,7 +24,7 @@ public class ProductCreateOrUpdateDTO {
     public Product getProduct(){
         Product product = new Product();
 
-        product.setNome(nome);
+        product.setName(nome);
         product.setId(id);
         product.setQuantidade(quantidade);
         product.setPreco(preco);

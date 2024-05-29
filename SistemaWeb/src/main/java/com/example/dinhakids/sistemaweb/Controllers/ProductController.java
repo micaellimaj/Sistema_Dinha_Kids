@@ -37,8 +37,8 @@ public class ProductController {
 
     //retorna os produtos pelo nome
     @GetMapping(path = "/produtos/nome")
-    public ResponseEntity<Product> getProductByName(@PathVariable String nome){
-        Product product = productService.getProductByName(nome);
+    public ResponseEntity<Product> getProductByName(@PathVariable String name){
+        Product product = productService.getProductByName(name);
         return ResponseEntity.status(201).body(product);
     }
 
@@ -50,7 +50,7 @@ public class ProductController {
     }
 
     //deleta os produtos pelo id
-    @GetMapping(path = "/produtos/{id}")
+    @DeleteMapping(path = "/produtos/{id}")
     public ResponseEntity<Product> deleteProduct(@PathVariable String id){
         productService.deleteProduct(id);
         return ResponseEntity.noContent().build();
