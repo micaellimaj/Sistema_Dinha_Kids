@@ -17,7 +17,7 @@ public class UserUpdateDTO {
     private String name;
 
     @Length(max = 30, message = "Username do usuário não pode exceder 30 caracteres")
-    private String username;
+    private String userName;
 
     @Email(message = "E-mail inválido")
     private String email;
@@ -29,12 +29,12 @@ public class UserUpdateDTO {
         if (name != null) {
             user.setName(name);
         }
-        if (username != null) {
-            User existingUser = userService.getUserByName(username);
+        if (userName != null) {
+            User existingUser = userService.getUserByName(userName);
             if (existingUser != null && !existingUser.getId().equals(user.getId())) {
                 throw new UsernameAlreadyExistsException("Username já existe");
             }
-            user.setUsername(username);
+            user.setUserName(userName);
         }
         if (email != null) {
             user.setEmail(email);

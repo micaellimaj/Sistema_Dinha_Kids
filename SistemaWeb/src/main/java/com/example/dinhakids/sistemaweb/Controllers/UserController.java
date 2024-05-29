@@ -40,7 +40,7 @@ public class UserController {
     public ResponseEntity<User> createUser(@RequestBody UserCreateDTO dto){
         User user = new User();
 
-        user.setUsername(dto.getUsername());
+        user.setUserName(dto.getUserName());
         user.setName(dto.getName());
         user.setEmail(dto.getEmail());
 
@@ -54,18 +54,18 @@ public class UserController {
     }
 
     //retorna o usuario de acordo com o username
-    @GetMapping(path = "/users/{username}")
-    public ResponseEntity<User> getUserByUsername(@PathVariable String username) {
-        User user = userService.getUserByUsername(username);
+    @GetMapping(path = "/users/{userName}")
+    public ResponseEntity<User> getUserByUserName(@PathVariable String userName) {
+        User user = userService.getUserByUsername(userName);
 
         return ResponseEntity.ok(user);
     }
 
 
     //atualiza o usuario
-    @PutMapping(path = "/users/{username}")
-    public ResponseEntity<User> updateUser(@PathVariable String username, @RequestBody @Valid UserUpdateDTO dto, UserService userService, PasswordEncoderService passwordEncoderService) {
-        User user = userRepository.findByUsername(username)
+    @PutMapping(path = "/users/{userName}")
+    public ResponseEntity<User> updateUser(@PathVariable String userName, @RequestBody @Valid UserUpdateDTO dto, UserService userService, PasswordEncoderService passwordEncoderService) {
+        User user = userRepository.findByUserName(userName)
                 .orElseThrow(() -> new UsernameNotFoundException("Usuario não encontrado"));
 
         dto.updateUser(user, userService, passwordEncoderService);
@@ -75,9 +75,9 @@ public class UserController {
     }
 
     //deleta o usuario
-    @DeleteMapping(path = "/users/{username}")
-    public ResponseEntity<User> deleteUser(@PathVariable String username) {
-        userService.deleteUser(username);
+    @DeleteMapping(path = "/users/{userName}")
+    public ResponseEntity<User> deleteUser(@PathVariable String userName) {
+        userService.deleteUser(userName);
 
         return ResponseEntity.noContent().build();
     }

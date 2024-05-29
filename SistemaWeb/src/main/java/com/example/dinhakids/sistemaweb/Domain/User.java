@@ -16,12 +16,12 @@ public class User {
     private UUID id;
 
     @Column(unique = true)
-    private String username;
+    private String userName;
     private String name;
     private String email;
     private String password;
 
     @CreationTimestamp
-    private LocalDateTime CriadoEm;
+    private LocalDateTime createdAt;
 
 }
