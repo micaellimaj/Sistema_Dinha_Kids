@@ -38,7 +38,7 @@ public class ProductService {
 
 
         //procura o produto pelo id
-        public Product getProductById(String id) {
+        public Product getProductById(int id) {
             return productRepository.findById(id)
                     .orElseThrow(() -> new NotFoundException("Produto não encontrado"));
         }
@@ -63,7 +63,7 @@ public class ProductService {
         }
 
         //deleta o produto pelo id
-        public void deleteProduct(String id) {
+        public void deleteProduct(int id) {
 
             Product product= productRepository.findById(id)
                     .orElseThrow(() -> new NotFoundException("Produto não encontrado"));

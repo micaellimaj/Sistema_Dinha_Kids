@@ -27,7 +27,12 @@ public class ProductUpdateDTO {
             product.setName(name);
         }
         if (id != null) {
-            product.setId(id);
+            try {
+                product.setId(Integer.parseInt(id));
+            }
+            catch (NumberFormatException e) {
+
+            }
         }
         if (quantity != 0) {
             product.setQuantity(quantity);

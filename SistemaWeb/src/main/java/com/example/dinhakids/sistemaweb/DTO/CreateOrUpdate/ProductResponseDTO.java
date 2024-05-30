@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 public class ProductResponseDTO {
-    private String id;
+    private int id;
     private String name;
     private int quantity;
     private double price;

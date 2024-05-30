@@ -45,7 +45,7 @@ public class UserCreateDTO {
         }
     }
 
-    public User getUser(){
+    public User createUser(){
         User user = new User();
 
         user.setId(id);

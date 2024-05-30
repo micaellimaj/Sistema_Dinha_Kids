@@ -17,7 +17,7 @@ public class ProductCreateDTO {
     private String name;
 
     @NotBlank(message = "id do produto não informado")
-    private String id;
+    private int id;
 
     @Min(value = 0, message = "Quantidade deve ser um número inteiro e não negativo")
     private int quantity;
@@ -25,8 +25,8 @@ public class ProductCreateDTO {
     @Min(value = 0, message = "Preço deve ser um número inteiro e não negativo")
     private int price;
 
-    public Product getProduct(){
-        Product product = new Product();
+    public Product createProduct(Product product){
+        product = new Product();
 
         product.setName(name);
         product.setId(id);

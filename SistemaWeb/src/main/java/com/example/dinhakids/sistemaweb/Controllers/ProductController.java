@@ -1,5 +1,6 @@
 package com.example.dinhakids.sistemaweb.Controllers;
 
+import com.example.dinhakids.sistemaweb.DTO.CreateOrUpdate.ProductCreateDTO;
 import com.example.dinhakids.sistemaweb.DTO.CreateOrUpdate.ProductResponseDTO;
 import com.example.dinhakids.sistemaweb.DTO.CreateOrUpdate.ProductUpdateDTO;
 import com.example.dinhakids.sistemaweb.Domain.Product;
@@ -37,22 +38,36 @@ public class ProductController {
 
     //retorna os produtos pelo id
     @GetMapping(path = "/{id}")
-    public ResponseEntity<ProductResponseDTO> getProductById(@PathVariable String id){
+    public ResponseEntity<ProductResponseDTO> getProductById(@PathVariable int id){
         Product product = productService.getProductById(id);
         return ResponseEntity.ok(new ProductResponseDTO(product));
     }
 
     //retorna os produtos pelo nome
-    @GetMapping(path = "/{name}")
+    @GetMapping(path = "/nome/{name}")
     public ResponseEntity<ProductResponseDTO> getProductByName(@PathVariable String name){
         Product product = productService.getProductByName(name);
         return ResponseEntity.ok(new ProductResponseDTO(product));
     }
 
+    //cria novos produtos
+    @PostMapping(path = "/cadastrar")
+    public ResponseEntity<ProductResponseDTO> createProduct(@RequestBody ProductCreateDTO dto){
+        Product product = new Product();
+
+        product.setName(dto.getName());
+        product.setId(dto.getId());
+        product.setPrice(dto.getPrice());
+        product.setQuantity(dto.getQuantity());
+        productRepository.save(product);
+
+        return ResponseEntity.ok(new ProductResponseDTO(product));
+    }
+
     //atualiza os produtos
     @PutMapping(path = "/{id}")
-    public ResponseEntity<ProductResponseDTO> updateProduct(@PathVariable String id, @RequestBody @Valid ProductUpdateDTO dto){
-        Product product = productRepository.findById(id)
+    public ResponseEntity<ProductResponseDTO> updateProduct(@PathVariable int id, @RequestBody @Valid ProductUpdateDTO dto){
+        Product product = productRepository.findById(String.valueOf(id))
                 .orElseThrow(() -> new ProductNotFoundException("Produto não encontrado"));
 
         dto.updateProduct(product);
@@ -63,7 +78,7 @@ public class ProductController {
 
     //deleta os produtos pelo id
     @DeleteMapping(path = "/{id}")
-    public ResponseEntity<Void> deleteProduct(@PathVariable String id){
+    public ResponseEntity<Void> deleteProduct(@PathVariable int id){
         productService.deleteProduct(id);
         return ResponseEntity.noContent().build();
     }
