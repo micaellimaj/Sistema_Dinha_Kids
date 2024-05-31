@@ -2,8 +2,8 @@ package com.example.dinhakids.sistemaweb.Controllers;
 
 import com.example.dinhakids.sistemaweb.DTO.CreateOrUpdate.UserCreateDTO;
 import com.example.dinhakids.sistemaweb.DTO.CreateOrUpdate.UserUpdateDTO;
-import com.example.dinhakids.sistemaweb.Domain.User;
-import com.example.dinhakids.sistemaweb.Repositorio.UserRepository;
+import com.example.dinhakids.sistemaweb.Models.User;
+import com.example.dinhakids.sistemaweb.Repository.UserRepository;
 import com.example.dinhakids.sistemaweb.Services.PasswordEncoderService;
 import com.example.dinhakids.sistemaweb.Services.UserService;
 import com.example.dinhakids.sistemaweb.exceptions.UsernameNotFoundException;
@@ -28,7 +28,7 @@ public class UserController {
     private PasswordEncoderService passwordEncoderService;
 
     //retorna todos os usuarios
-    @GetMapping("/users")
+    @GetMapping("/usuarios")
     public ResponseEntity<List<User>> getAllUsers() {
         List<User> users = userService.getUsers();
 
@@ -38,23 +38,13 @@ public class UserController {
     //cria novos usuarios
     @PostMapping(path = "/cadastrar")
     public ResponseEntity<User> createUser(@RequestBody UserCreateDTO dto){
-        User user = new User();
-
-        user.setUserName(dto.getUserName());
-        user.setName(dto.getName());
-        user.setEmail(dto.getEmail());
-
-        dto.setPasswordEncoderService(passwordEncoderService);
-        dto.encodePassword();
-
-        user.setPassword(dto.getPassword());
-        userRepository.save(user);
+        User user = userService.createUser(dto);
 
         return ResponseEntity.status(201).body(user);
     }
 
     //retorna o usuario de acordo com o username
-    @GetMapping(path = "/users/{userName}")
+    @GetMapping(path = "/usuarios/{userName}")
     public ResponseEntity<User> getUserByUserName(@PathVariable String userName) {
         User user = userService.getUserByUsername(userName);
 
@@ -63,19 +53,15 @@ public class UserController {
 
 
     //atualiza o usuario
-    @PutMapping(path = "/users/{userName}")
-    public ResponseEntity<User> updateUser(@PathVariable String userName, @RequestBody @Valid UserUpdateDTO dto, UserService userService, PasswordEncoderService passwordEncoderService) {
-        User user = userRepository.findByUserName(userName)
-                .orElseThrow(() -> new UsernameNotFoundException("Usuario não encontrado"));
-
-        dto.updateUser(user, userService, passwordEncoderService);
-        userRepository.save(user);
+    @PutMapping(path = "/usuarios/{userName}")
+    public ResponseEntity<User> updateUser(@PathVariable String userName, @RequestBody @Valid UserUpdateDTO dto) {
+        User user = userService.updateUser(userName, dto);
 
         return ResponseEntity.ok(user);
     }
 
     //deleta o usuario
-    @DeleteMapping(path = "/users/{userName}")
+    @DeleteMapping(path = "/usuarios/{userName}")
     public ResponseEntity<User> deleteUser(@PathVariable String userName) {
         userService.deleteUser(userName);
 

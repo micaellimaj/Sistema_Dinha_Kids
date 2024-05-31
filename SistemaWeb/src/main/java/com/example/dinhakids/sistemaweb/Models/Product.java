@@ -1,4 +1,4 @@
-package com.example.dinhakids.sistemaweb.Domain;
+package com.example.dinhakids.sistemaweb.Models;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -29,5 +29,9 @@ public class Product {
 
     @CreationTimestamp
     private LocalDateTime lastUpdate;
+
+    @ManyToOne
+    @JoinColumn(name = "categoria_id")
+    private Category category;
 
 }

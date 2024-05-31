@@ -1,6 +1,6 @@
 package com.example.dinhakids.sistemaweb.DTO.CreateOrUpdate;
 
-import com.example.dinhakids.sistemaweb.Domain.User;
+import com.example.dinhakids.sistemaweb.Models.User;
 import com.example.dinhakids.sistemaweb.Services.PasswordEncoderService;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;

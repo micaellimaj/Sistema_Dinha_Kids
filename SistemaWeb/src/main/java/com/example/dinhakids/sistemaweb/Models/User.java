@@ -1,4 +1,4 @@
-package com.example.dinhakids.sistemaweb.Domain;
+package com.example.dinhakids.sistemaweb.Models;
 
 import jakarta.persistence.*;
 import lombok.Data;

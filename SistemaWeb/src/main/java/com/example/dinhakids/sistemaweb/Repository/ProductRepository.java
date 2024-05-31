@@ -1,9 +1,7 @@
-package com.example.dinhakids.sistemaweb.Repositorio;
+package com.example.dinhakids.sistemaweb.Repository;
 
-import com.example.dinhakids.sistemaweb.DTO.CreateOrUpdate.ProductCreateDTO;
-import com.example.dinhakids.sistemaweb.Domain.Product;
+import com.example.dinhakids.sistemaweb.Models.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 
 import java.util.Optional;
 

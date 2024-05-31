@@ -1,9 +1,12 @@
 package com.example.dinhakids.sistemaweb.Services;
 
-import com.example.dinhakids.sistemaweb.Domain.Product;
-import com.example.dinhakids.sistemaweb.Repositorio.ProductRepository;
+import com.example.dinhakids.sistemaweb.DTO.CreateOrUpdate.ProductUpdateDTO;
+import com.example.dinhakids.sistemaweb.Models.Product;
+import com.example.dinhakids.sistemaweb.Repository.CategoryRepository;
+import com.example.dinhakids.sistemaweb.Repository.ProductRepository;
 import com.example.dinhakids.sistemaweb.exceptions.BusinessException;
 import com.example.dinhakids.sistemaweb.exceptions.NotFoundException;
+import com.example.dinhakids.sistemaweb.exceptions.ProductNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,28 +16,14 @@ import java.util.List;
 public class ProductService {
 
         @Autowired
-        private ProductRepository productRepository;
+        private  ProductRepository productRepository;
+
+        private CategoryRepository categoryRepository;
 
         public List<Product> getProducts(){
             return productRepository.findAll();
         }
 
-
-        //verifica e cria novos produtos
-        @Transactional(rollbackOn = Exception.class)
-        public Product createProduct(Product product) {
-
-            if(productRepository.existsById(product.getId())) {
-                throw new BusinessException("Já existe um produto com a Referência informada");
-            }
-
-            if(productRepository.existsByName(product.getName())){
-                throw new BusinessException("Já existe um produto com o nome informado");
-            }
-
-            productRepository.save(product);
-            return product;
-        }
 
 
         //procura o produto pelo id
@@ -51,14 +40,17 @@ public class ProductService {
 
         //atualiza o produto
         @Transactional(rollbackOn = Exception.class)
-        public Product updateProduct(Product product) {
+        public Product updateProduct(ProductUpdateDTO productUpdateDTO, int id) {
+            Product product = productRepository.findById(id)
+                    .orElseThrow(() -> new ProductNotFoundException("Produto não encontrado"));
 
-            if(productRepository.existsByIdAndName(product.getId(), product.getName()) &&
-                !productRepository.findById(product.getId()).get().equals(product)){
+            if(productRepository.existsByIdAndName(id, productUpdateDTO.getName()) &&
+                !product.equals(productUpdateDTO)){
                 throw new BusinessException("Já existe um produto com a referência e o nome informados");
             }
 
-            productRepository.save(product);
+
+            productUpdateDTO.updateProduct(product, categoryRepository);
             return product;
         }
 

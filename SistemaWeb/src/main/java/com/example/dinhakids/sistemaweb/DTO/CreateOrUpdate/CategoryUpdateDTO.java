@@ -1,6 +1,6 @@
 package com.example.dinhakids.sistemaweb.DTO.CreateOrUpdate;
 
-import com.example.dinhakids.sistemaweb.Domain.Category;
+import com.example.dinhakids.sistemaweb.Models.Category;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
@@ -9,13 +9,13 @@ import org.hibernate.validator.constraints.Length;
 @NoArgsConstructor
 public class CategoryUpdateDTO {
 
-    private String id;
+    private int id;
 
     @Length(max = 45, message = "Nome da categoria não pode exceder 45 caracteres")
     private String name;
 
     public void updateCategory(Category category) {
-        if (id != null && id.isEmpty()) {
+        if (id != 0 ) {
             category.setId(id);
         }
         if (name != null) {
