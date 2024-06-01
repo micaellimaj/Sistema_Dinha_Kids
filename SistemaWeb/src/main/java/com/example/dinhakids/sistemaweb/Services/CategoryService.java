@@ -1,8 +1,11 @@
 package com.example.dinhakids.sistemaweb.Services;
 
-import com.example.dinhakids.sistemaweb.Domain.Category;
-import com.example.dinhakids.sistemaweb.Repositorio.CategoryRepository;
+import com.example.dinhakids.sistemaweb.DTO.CreateOrUpdate.CategoryCreateDTO;
+import com.example.dinhakids.sistemaweb.DTO.CreateOrUpdate.CategoryUpdateDTO;
+import com.example.dinhakids.sistemaweb.Models.Category;
+import com.example.dinhakids.sistemaweb.Repository.CategoryRepository;
 import com.example.dinhakids.sistemaweb.exceptions.BusinessException;
+import com.example.dinhakids.sistemaweb.exceptions.CategoryNotFoundException;
 import com.example.dinhakids.sistemaweb.exceptions.NotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,14 +49,16 @@ public class CategoryService {
 
     //atualiza a categoria
     @Transactional(rollbackOn = Exception.class)
-    public Category updateCategory(Category category) {
+    public Category updateCategory(CategoryUpdateDTO categoryUpdateDTO, String name) {
+        Category category = categoryRepository.findByName(name)
+                .orElseThrow(() -> new CategoryNotFoundException("Categoria não encontrada"));
 
         if(categoryRepository.existsByIdAndName(category.getId(), category.getName()) &&
                 !categoryRepository.findByName(category.getName()).get().equals(category)){
             throw new BusinessException("Já existe uma categoria com o id e o nome informados");
         }
 
-        categoryRepository.save(category);
+        categoryUpdateDTO.updateCategory(category);
         return category;
     }
 

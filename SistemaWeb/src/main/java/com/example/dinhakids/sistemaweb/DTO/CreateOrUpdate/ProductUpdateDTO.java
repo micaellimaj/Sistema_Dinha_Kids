@@ -1,8 +1,10 @@
 package com.example.dinhakids.sistemaweb.DTO.CreateOrUpdate;
 
-import com.example.dinhakids.sistemaweb.Domain.Product;
+import com.example.dinhakids.sistemaweb.Models.Category;
+import com.example.dinhakids.sistemaweb.Models.Product;
+import com.example.dinhakids.sistemaweb.Repository.CategoryRepository;
+import com.example.dinhakids.sistemaweb.exceptions.CategoryNotFoundException;
 import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
@@ -22,7 +24,9 @@ public class ProductUpdateDTO {
     @Min(value = 0, message = "O preço deve ser um número inteiro e não negativo")
     private int price;
 
-    public void updateProduct(Product product) {
+    private int categoryId;
+
+    public void updateProduct(Product product, CategoryRepository categoryRepository) {
         if (name != null) {
             product.setName(name);
         }
@@ -39,6 +43,10 @@ public class ProductUpdateDTO {
         }
         if (price != 0) {
             product.setPrice(price);
+        }
+        if (categoryId != 0) {
+            Category category = categoryRepository.findById(categoryId).orElseThrow(() -> new CategoryNotFoundException("Categoria não encontrada"));
+            product.setCategory(category);
         }
     }
 }

@@ -1,10 +1,9 @@
 package com.example.dinhakids.sistemaweb.Controllers;
 
 import com.example.dinhakids.sistemaweb.DTO.CreateOrUpdate.*;
-import com.example.dinhakids.sistemaweb.Domain.Category;
-import com.example.dinhakids.sistemaweb.Repositorio.CategoryRepository;
+import com.example.dinhakids.sistemaweb.Models.Category;
+import com.example.dinhakids.sistemaweb.Repository.CategoryRepository;
 import com.example.dinhakids.sistemaweb.Services.CategoryService;
-import com.example.dinhakids.sistemaweb.exceptions.ProductNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -42,25 +41,15 @@ public class CategoryController {
     //cria novas categorias
     @PostMapping(path = "/cadastrar")
     public ResponseEntity<Category> createCategory(@RequestBody CategoryCreateDTO dto){
-        Category category = new Category();
-
-        category.setId(dto.getId());
-        category.setName(dto.getName());
-
-
-        categoryRepository.save(category);
-
+        Category category = dto.createCategory(new Category());
+        category = categoryService.createCategory(category);
         return ResponseEntity.ok(category);
     }
 
     //atualiza as categorias
     @PutMapping(path = "/{name}")
     public ResponseEntity<Category> updateCategory (@PathVariable String name, @RequestBody @Valid CategoryUpdateDTO dto){
-        Category category = categoryRepository.findByName(name)
-                .orElseThrow(() -> new ProductNotFoundException("Categoria não encontrada"));
-
-        dto.updateCategory(category);
-        categoryRepository.save(category);
+        Category category = categoryService.updateCategory(dto, name);
 
         return ResponseEntity.ok(category);
     }

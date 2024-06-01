@@ -1,6 +1,7 @@
 package com.example.dinhakids.sistemaweb.DTO.CreateOrUpdate;
 
-import com.example.dinhakids.sistemaweb.Domain.User;
+import com.example.dinhakids.sistemaweb.Models.User;
+import com.example.dinhakids.sistemaweb.Repository.UserRepository;
 import com.example.dinhakids.sistemaweb.Services.PasswordEncoderService;
 import com.example.dinhakids.sistemaweb.Services.UserService;
 import com.example.dinhakids.sistemaweb.exceptions.PasswordEncodingException;
@@ -25,12 +26,12 @@ public class UserUpdateDTO {
     private String password;
 
 
-    public void updateUser(User user, UserService userService, PasswordEncoderService passwordEncoderService) {
+    public void updateUser(User user, UserRepository userRepository, PasswordEncoderService passwordEncoderService) {
         if (name != null) {
             user.setName(name);
         }
         if (userName != null) {
-            User existingUser = userService.getUserByName(userName);
+            User existingUser = userRepository.getUserByName(userName);
             if (existingUser != null && !existingUser.getId().equals(user.getId())) {
                 throw new UsernameAlreadyExistsException("Username já existe");
             }

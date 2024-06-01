@@ -1,8 +1,7 @@
 package com.example.dinhakids.sistemaweb.DTO.CreateOrUpdate;
 
-import com.example.dinhakids.sistemaweb.Domain.Product;
+import com.example.dinhakids.sistemaweb.Models.Product;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
 public class ProductResponseDTO {
