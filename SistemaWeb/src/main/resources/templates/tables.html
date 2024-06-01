@@ -10,19 +10,19 @@ xmlns:th="http://www.thymeleaf.org">
     <meta name="author" content="">
 
     <title>SB Admin 2 - Tables</title>
-     <link rel="shortcut icon" href="iconetitulo/icon.ico" type="image/x-icon">
+     <link rel="shortcut icon" href="../static/iconetitulo/icon.ico" type="image/x-icon">
     <!-- Custom fonts for this template -->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../static/css/sb-admin-2.min.css" rel="stylesheet">
 
     <!-- Custom styles for this page -->
-    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/sb-admin-2.css">
+    <link href="../static/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/sb-admin-2.css">
 
 </head>
 
@@ -33,9 +33,9 @@ xmlns:th="http://www.thymeleaf.org">
 
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
+            <!-- antes:  href="../static/templates\dashboard.html" -->
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../static/dashboard.html">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -47,7 +47,7 @@ xmlns:th="http://www.thymeleaf.org">
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="dashboard.html">
+                <a class="nav-link" href="../static/dashboard.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -77,13 +77,13 @@ xmlns:th="http://www.thymeleaf.org">
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="cadastrar.html">Cadastrar</a>
+                        <a class="collapse-item" href="../static/templates/login.html">Login</a>
+                        <a class="collapse-item" href="cadastro.html">Cadastrar</a>
 
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
+                        <a class="collapse-item" href="../static/templates/404.html">404 Page</a>
+                        <a class="collapse-item" href="../static/templates/blank.html">Blank Page</a>
                     </div>
                 </div>
             </li>
@@ -182,25 +182,26 @@ xmlns:th="http://www.thymeleaf.org">
                             <div class="card-body p-0">
                                 <!-- Linha aninhada no corpo do cartão -->
                                 <div class="row">
-                                    <div class="col-lg-5 d-none d-lg-block" style="background-image: url('img/produtos.jpg');background-size: cover;"></div>
+                                    <div class="col-lg-5 d-none d-lg-block" style="background-image: url('/static/img/produtos.jpeg'); background-size: cover;"></div>
+
                                     <div class="col-lg-7">
                                         <div class="p-5">
                                             <div class="text-center">
                                                 <h1 class="h4 text-gray-900 mb-4">Adicione o produto aqui!</h1>
                                             </div>
-                                            <form class="user" method="POST" action="/produtos">
+                                            <form class="user" method="POST" action="/produtos/table/cadastrar">
                                                 <div class="form-group row">
                                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                                        <input type="text" class="form-control form-control-user" name="nome"placeholder="nome do produto">
+                                                        <input type="text" class="form-control form-control-user" name="name"placeholder="nome do produto">
                                                     </div>
 
                                                     <div class="col-sm-6">
-                                                        <input type="number" class="form-control form-control-user"  name ="quantidade"
+                                                        <input type="number" class="form-control form-control-user"  name ="quantity"
                                                                placeholder="Quantidade">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <input type="number" class="form-control form-control-user" name="preco" placeholder="preço do produto">
+                                                    <input type="number" class="form-control form-control-user" name="price" placeholder="preço do produto">
                                                 </div>
                                                 <div class="form-group row">
                                                     <div class="col-sm-6 mb-3 mb-sm-0">
@@ -293,7 +294,7 @@ xmlns:th="http://www.thymeleaf.org">
                 <div class="container my-auto">
                     <div class="
                     yright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                        <span>Unifavip developers &copy; 2024</span>
                     </div>
                 </div>
             </footer>
@@ -324,28 +325,28 @@ xmlns:th="http://www.thymeleaf.org">
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="../static/login.html">Logout</a>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/vendor/jquery/jquery.min.js"></script>
+    <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../static/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="../static/js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="../static/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="../static/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
+    <script src="../static/js/demo/datatables-demo.js"></script>
 
 </body>
 

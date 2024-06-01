@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/dinha")
+@RequestMapping("/dinha/cadastro") // @RequestMapping("/dinha") estou mudando para fazer conexão com o html
 public class UserController {
 
     @Autowired
