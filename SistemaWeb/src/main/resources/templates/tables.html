@@ -77,13 +77,13 @@ xmlns:th="http://www.thymeleaf.org">
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="../static/templates/login.html">Login</a>
+                        <a class="collapse-item" href="../static/login.html">Login</a>
                         <a class="collapse-item" href="cadastro.html">Cadastrar</a>
 
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="../static/templates/404.html">404 Page</a>
-                        <a class="collapse-item" href="../static/templates/blank.html">Blank Page</a>
+                        <a class="collapse-item" href="../static/404.html">404 Page</a>
+                        <a class="collapse-item" href="../static/blank.html">Blank Page</a>
                     </div>
                 </div>
             </li>
@@ -258,6 +258,7 @@ xmlns:th="http://www.thymeleaf.org">
 
                                     <tbody>
                                     <!-- Model   $ Controller - nome que vai está se referindo a isso daqui -->
+                                    <!--
                                     <tr th:each="produtos : ${ProdutosController}">
                                         <td th:text="${produtos.nome}"></td>
                                         <td th:text="${produtos.quantidade}"></td>
@@ -265,6 +266,7 @@ xmlns:th="http://www.thymeleaf.org">
                                         <td th:text="${produtos.categoria}"></td>
                                         <td th:text="${produtos.fornecedor}"></td>
                                     </tr>
+                                    -->
                                     </tbody>
                                 </table>
                             </div>
@@ -272,20 +274,7 @@ xmlns:th="http://www.thymeleaf.org">
                     </div>
 
                 </div>
-                <!-- /.container-fluid -->
-                            <!-- Model   $ Controller - nome que vai está se referindo a isso daqui -->
 
-                <!--
-
-                <div th:each="produtos: ${Product}">
-                    <div class = "row">
-                        <p><span th: text="${Product.nome}"></span></p>
-                        <p><span th: text="${Product.quantidade}"></span></p>
-                        <p><span th: text="${Product.preco}"></span></p>
-                        <p><span th: text="${Product.categoria}"></span></p>
-                        <p><span th: text="${Product.fornecedor}"></span></p>
-                </div>
--->
             </div>
             <!-- End of Main Content -->
 
