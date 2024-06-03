@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Controller
-@RequestMapping("/produtos/table") //@RequestMapping("/produtos") Alterei para fazer ligação com o html
+@RequestMapping("/produtos/tables") //@RequestMapping("/produtos") Alterei para fazer ligação com o html
 public class ProductController {
 
     @Autowired
