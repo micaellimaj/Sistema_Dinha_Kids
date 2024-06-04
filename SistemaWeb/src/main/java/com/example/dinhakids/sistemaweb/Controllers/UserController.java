@@ -11,10 +11,12 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import org.springframework.ui.Model;
 
-@RestController
+@Controller
 @RequestMapping("/dinha/cadastro") // @RequestMapping("/dinha") estou mudando para fazer conexão com o html
 public class UserController {
 
@@ -29,12 +31,11 @@ public class UserController {
 
     //retorna todos os usuarios
     @GetMapping("/usuarios")
-    public ResponseEntity<List<User>> getAllUsers() {
+    public String getAllUsers(Model model) {
         List<User> users = userService.getUsers();
-
-        return new ResponseEntity<>(users, HttpStatus.OK);
+        model.addAttribute("users", users);
+        return "cadastro"; // Assumindo que o arquivo do template é chamado cadastro.html
     }
-
     //cria novos usuarios
     @PostMapping(path = "/cadastrar")
     public ResponseEntity<User> createUser(@RequestBody UserCreateDTO dto){

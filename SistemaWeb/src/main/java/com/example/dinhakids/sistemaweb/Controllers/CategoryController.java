@@ -12,6 +12,7 @@ import jakarta.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @Controller
 @RequestMapping("/categorias")
 public class CategoryController {

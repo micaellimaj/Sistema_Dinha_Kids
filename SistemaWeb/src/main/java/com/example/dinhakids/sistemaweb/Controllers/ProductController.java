@@ -19,6 +19,10 @@ import jakarta.validation.Valid;
 
 import java.util.List;
 import java.util.stream.Collectors;
+import org.springframework.web.servlet.view.RedirectView;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 @RequestMapping("/produtos/tables") //@RequestMapping("/produtos") Alterei para fazer ligação com o html
@@ -32,13 +36,11 @@ public class ProductController {
     private CategoryRepository categoryRepository;
 
     //retorna todos os produtos
-    @GetMapping
-    public ResponseEntity<List<ProductResponseDTO>> getProduct(){
-        List<Product> products = productService.getProducts();
-
-        return ResponseEntity.ok(products.stream()
-                .map(ProductResponseDTO ::new)
-                .collect(Collectors.toList()));
+    @GetMapping("/produtos")
+    public String listarProdutos(Model model) {
+        List<Product> produtos = productService.getProducts();
+        model.addAttribute("produtos", produtos);
+        return "tables"; // Assumindo que o arquivo do template é chamado listaProdutos.html
     }
 
     //retorna os produtos pelo id
@@ -57,10 +59,11 @@ public class ProductController {
 
     //cria novos produtos
     @PostMapping(path = "/cadastrar")
-    public ResponseEntity<ProductResponseDTO> createProduct(@RequestBody ProductCreateDTO dto){
+    public String createProduct(@RequestBody ProductCreateDTO dto, Model model) {
         Product product = dto.createProduct(productRepository, categoryRepository);
         productRepository.save(product);
-        return ResponseEntity.ok(new ProductResponseDTO(product));
+        model.addAttribute("produto", product);
+        return "/resources/templates/tables.html"; // Substitua "nomeDaPagina" pelo nome do seu template HTML sem a extensão.html
     }
 
     //atualiza os produtos
