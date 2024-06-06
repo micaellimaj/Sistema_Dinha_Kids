@@ -70,3 +70,14 @@ public class UserController {
     }
 
 }
+/*
+
+@GetMapping("/dados")
+    public ResponseEntity<List<User>> getAllUsers() {
+        List<User> users = userService.getUsers();
+
+        return new ResponseEntity<>(users, HttpStatus.OK);
+
+    }
+
+*/
