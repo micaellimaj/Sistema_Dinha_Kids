@@ -30,12 +30,20 @@ public class UserController {
     private PasswordEncoderService passwordEncoderService;
 
     //retorna todos os usuarios
-    @GetMapping("/usuarios")
+    @GetMapping("/pagina")
     public String getAllUsers(Model model) {
         List<User> users = userService.getUsers();
         model.addAttribute("users", users);
         return "cadastro"; // Assumindo que o arquivo do template é chamado cadastro.html
     }
+    // Tentativa
+    @GetMapping("/usuarios")
+    public ResponseEntity<List<User>> getAllUsers() {
+        List<User> users = userService.getUsers();
+
+        return new ResponseEntity<>(users, HttpStatus.OK);
+    }
+
     //cria novos usuarios
     @PostMapping(path = "/cadastrar")
     public ResponseEntity<User> createUser(@RequestBody UserCreateDTO dto){
