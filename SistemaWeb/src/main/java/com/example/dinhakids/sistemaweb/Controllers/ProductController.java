@@ -43,7 +43,6 @@ public class ProductController {
         return "tables"; // Assumindo que o arquivo do template é chamado listaProdutos.html
     }
 
-
     //retorna os produtos pelo id
     @GetMapping(path = "/{id}")
     public ResponseEntity<ProductResponseDTO> getProductById(@PathVariable int id){
