@@ -1,4 +1,4 @@
-package com.example.dinhakids.sistemaweb.Services;
+/* package com.example.dinhakids.sistemaweb.Services;
 
 import com.example.dinhakids.sistemaweb.DTO.AcessDTO;
 import com.example.dinhakids.sistemaweb.DTO.AuthenticationDTO;
@@ -67,3 +67,4 @@ public class AuthService {
     }
 
 }
+*/

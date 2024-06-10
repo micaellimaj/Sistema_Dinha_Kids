@@ -1,4 +1,4 @@
-package com.example.dinhakids.sistemaweb.Controllers;
+/*package com.example.dinhakids.sistemaweb.Controllers;
 
 import com.example.dinhakids.sistemaweb.DTO.AuthenticationDTO;
 import com.example.dinhakids.sistemaweb.Services.AuthService;
@@ -18,3 +18,4 @@ public class AuthController {
         return ResponseEntity.ok(authService.login(dto));
     }
 }
+*/
