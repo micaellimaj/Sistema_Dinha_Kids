@@ -14,13 +14,28 @@
 * Criar um dashboard de análise de dados que vão sendo inseridos no banco de dados, assim proporcionando a tomada de decisões informadas;
 * Criar sistema de autenticação de usuários por meio de página de login.
 
-# Tecnologias utilizadas:
+## Tecnologias utilizadas:
 
 <div style="display: inline_block">
 <img align="center" alt="HTML5" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />  
 <img align="center" alt="CSS3" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />  
 <img align="center" alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
 </div>
+
+## Desenvolvimento:
+
+* Desenvolvimento de website para a Dinha Kids que está no ramo da confecção de peças de roupas infantil e precisa de um sistema para armazenar, gerenciar e analisar dados.
+* Utilização do HTML,  CSS  e JavaScript para o front-end, com adaptação de um template para o conteúdo necessário para a página e mudança do design para representar a marca.
+* Uso do java para criação do back-end , com o uso do modelo spring boot  para mapeamento entre front e back, com alteração do html normal para thymeleaf e conexão com MySQL.
+Construção de um power bi com conexão MySQL para análise das peças de roupas.
+
+<table>
+  <tr>
+    <td><img src="IMG/cadastro.png" alt="pagina1" width="400"/></td>
+    <td><img src="IMG/table.png" alt="pagina2" width="400"/></td>
+  </tr>
+</table>
+
 
 ## Localização Dinha Kids:
 

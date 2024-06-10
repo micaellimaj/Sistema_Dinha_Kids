@@ -35,11 +35,11 @@ public class ProductController {
     @Autowired
     private CategoryRepository categoryRepository;
 
-    //retorna todos os produtos
-    @GetMapping("/produtos")
+    //retorna  a página
+    @GetMapping("/tabela")
     public String listarProdutos(Model model) {
         List<Product> produtos = productService.getProducts();
-        model.addAttribute("produtos", produtos);
+        model.addAttribute("tabela", produtos);
         return "tables"; // Assumindo que o arquivo do template é chamado listaProdutos.html
     }
 
@@ -59,12 +59,13 @@ public class ProductController {
 
     //cria novos produtos
     @PostMapping(path = "/cadastrar")
-    public String createProduct(@RequestBody ProductCreateDTO dto, Model model) {
+    public ResponseEntity<ProductResponseDTO> createProduct(@RequestBody ProductCreateDTO dto){
+
         Product product = dto.createProduct(productRepository, categoryRepository);
         productRepository.save(product);
-        model.addAttribute("produto", product);
-        return "/resources/templates/tables.html"; // Substitua "nomeDaPagina" pelo nome do seu template HTML sem a extensão.html
+        return ResponseEntity.ok(new ProductResponseDTO(product));
     }
+
 
     //atualiza os produtos
     @PutMapping(path = "/{id}")
@@ -83,3 +84,16 @@ public class ProductController {
 
 
 }
+/*
+
+//retorna todos os produtos - REMOVIDO PARA RETORNAR A PÁGINA
+    @GetMapping
+    public ResponseEntity<List<ProductResponseDTO>> getProduct(){
+        List<Product> products = productService.getProducts();
+
+        return ResponseEntity.ok(products.stream()
+                .map(ProductResponseDTO ::new)
+                .collect(Collectors.toList()));
+
+
+*/
