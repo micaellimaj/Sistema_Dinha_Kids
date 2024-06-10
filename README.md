@@ -29,6 +29,13 @@
 * Uso do java para criação do back-end , com o uso do modelo spring boot  para mapeamento entre front e back, com alteração do html normal para thymeleaf e conexão com MySQL.
 Construção de um power bi com conexão MySQL para análise das peças de roupas.
 
+<table>
+  <tr>
+    <td><img src="IMG/cadastro.png" alt="pagina1" width="400"/></td>
+    <td><img src="IMG/table.png" alt="pagina2" width="400"/></td>
+  </tr>
+</table>
+
 
 ## Localização Dinha Kids:
 
