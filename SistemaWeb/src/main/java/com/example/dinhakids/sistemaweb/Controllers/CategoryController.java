@@ -7,6 +7,7 @@ import com.example.dinhakids.sistemaweb.Services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import jakarta.validation.Valid;
 import java.util.ArrayList;
@@ -41,7 +42,7 @@ public class CategoryController {
 
     //cria novas categorias
     @PostMapping(path = "/cadastrar")
-    public ResponseEntity<Category> createCategory(@RequestBody CategoryCreateDTO dto){
+    public ResponseEntity<Category> createCategory(@ModelAttribute CategoryCreateDTO dto, Model model){
         Category category = dto.createCategory(new Category());
         category = categoryService.createCategory(category);
         return ResponseEntity.ok(category);
@@ -49,7 +50,7 @@ public class CategoryController {
 
     //atualiza as categorias
     @PutMapping(path = "/{name}")
-    public ResponseEntity<Category> updateCategory (@PathVariable String name, @RequestBody @Valid CategoryUpdateDTO dto){
+    public ResponseEntity<Category> updateCategory (@PathVariable String name, @ModelAttribute @Valid CategoryUpdateDTO dto, Model model){
         Category category = categoryService.updateCategory(dto, name);
 
         return ResponseEntity.ok(category);

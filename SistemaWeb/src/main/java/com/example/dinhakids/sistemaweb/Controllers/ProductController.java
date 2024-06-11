@@ -59,7 +59,7 @@ public class ProductController {
 
     //cria novos produtos
     @PostMapping(path = "/cadastrar")
-    public ResponseEntity<ProductResponseDTO> createProduct(@RequestBody ProductCreateDTO dto){
+    public ResponseEntity<ProductResponseDTO> createProduct(@ModelAttribute ProductCreateDTO dto, Model model){
 
         Product product = dto.createProduct(productRepository, categoryRepository);
         productRepository.save(product);
@@ -69,7 +69,7 @@ public class ProductController {
 
     //atualiza os produtos
     @PutMapping(path = "/{id}")
-    public ResponseEntity<ProductResponseDTO> updateProduct(@PathVariable int id, @RequestBody @Valid ProductUpdateDTO dto){
+    public ResponseEntity<ProductResponseDTO> updateProduct(@PathVariable int id, @ModelAttribute @Valid ProductUpdateDTO dto, Model model){
         Product product = productService.updateProduct(dto, id);
         return ResponseEntity.ok(new ProductResponseDTO(product));
     }

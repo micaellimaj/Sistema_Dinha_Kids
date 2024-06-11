@@ -6,12 +6,12 @@ import com.example.dinhakids.sistemaweb.Models.User;
 import com.example.dinhakids.sistemaweb.Repository.UserRepository;
 import com.example.dinhakids.sistemaweb.Services.PasswordEncoderService;
 import com.example.dinhakids.sistemaweb.Services.UserService;
-import com.example.dinhakids.sistemaweb.exceptions.UsernameNotFoundException;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import org.springframework.ui.Model;
@@ -29,7 +29,7 @@ public class UserController {
     @Autowired
     private PasswordEncoderService passwordEncoderService;
 
-    // Retorna a página
+    // Retorna a página de cadastro
     @GetMapping("/pagina")
     public String getAllUsers(Model model) {
         List<User> users = userService.getUsers();
@@ -45,11 +45,13 @@ public class UserController {
     }
 
     //cria novos usuarios
-    @PostMapping(path = "/cadastrar")
-    public ResponseEntity<User> createUser(@RequestBody UserCreateDTO dto){
+    @PostMapping("/pagina")
+    public String createUser(@ModelAttribute @Valid UserCreateDTO dto, BindingResult result, Model model) {
+        if (result.hasErrors()) {
+            return "cadastro"; // Retorna a página de cadastro com erros
+        }
         User user = userService.createUser(dto);
-
-        return ResponseEntity.status(201).body(user);
+        return "redirect:/dinha/cadastro/pagina"; // Redireciona para a página de cadastro após criar o usuário
     }
 
     //retorna o usuario de acordo com o username
@@ -63,7 +65,7 @@ public class UserController {
 
     //atualiza o usuario
     @PutMapping(path = "/usuarios/{userName}")
-    public ResponseEntity<User> updateUser(@PathVariable String userName, @RequestBody @Valid UserUpdateDTO dto) {
+    public ResponseEntity<User> updateUser(@PathVariable String userName, @ModelAttribute @Valid UserUpdateDTO dto, Model model) {
         User user = userService.updateUser(userName, dto);
 
         return ResponseEntity.ok(user);
@@ -78,14 +80,3 @@ public class UserController {
     }
 
 }
-/*
-
-@GetMapping("/dados")
-    public ResponseEntity<List<User>> getAllUsers() {
-        List<User> users = userService.getUsers();
-
-        return new ResponseEntity<>(users, HttpStatus.OK);
-
-    }
-
-*/
