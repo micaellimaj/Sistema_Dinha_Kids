@@ -28,7 +28,7 @@ public class CategoryController {
     @GetMapping("/tabela")
     public String listarCategorias(Model model) {
         List<Category> categorias = categoryService.getCategorys(); // Supondo que este método retorne todas as categorias
-        model.addAttribute("tabela", categorias);
+        model.addAttribute("categorias", categorias);
         return "categoria"; // Nome da view que exibe as categorias
     }
 
