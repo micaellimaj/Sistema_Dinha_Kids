@@ -8,7 +8,28 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+
+
     <title>Dinha Kids - Tabela </title>
+
+    <!-- Estilo do Formulário -->
+
+    <style>
+        .message {
+            display: none;
+            padding: 10px;
+            margin-top: 10px;
+            width: 100%; /* Garantindo que ambas as mensagens tenham o mesmo tamanho */
+            white-space: nowrap;
+        }
+        .success {
+            color: green !important; /* Adicionando !important */
+            font-size: 2em; /* Tamanho do texto ajustado para o dobro do tamanho */
+        }
+        .error {
+            color: red !important; /* Adicionando !important */
+        }
+    </style>
 
     <!-- Fontes personalizadas para este modelo -->
     <link th:href="@{/vendor/fontawesome-free/css/all.min.css}" rel="stylesheet" type="text/css">
@@ -208,10 +229,9 @@
                                                 <button type="submit" class="btn btn-primary btn-user btn-block">
                                                     Salvar dados
                                                 </button>
-
-
                                                 <hr>
-
+                                                    <div id="mensagemSucesso" class="message success"></div>
+                                                    <div id="mensagemErro" class="message error"></div>
                                             </form>
                                             <hr>
 
@@ -234,20 +254,14 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Nome</th>
-                                            <th>quantidade</th>
-                                            <th>preco</th>
-                                            <th>categoria</th>
-                                            <th>fornecedor</th>
+                                            <th>Nome da categoria</th>
+                                            <th>id da categoria</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Nome</th>
-                                            <th>quantidade</th>
-                                            <th>preco</th>
-                                            <th>categoria</th>
-                                            <th>fornecedor</th>
+                                            <th>Nome da categoria</th>
+                                            <th>id da categoria</th>
                                         </tr>
                                     </tfoot>
 
@@ -255,8 +269,8 @@
                                     <!-- Model   $ Controller - nome que vai está se referindo a isso daqui -->
                                     <!--
                                     <tr th:each="produtos : ${ProdutosController}">
-                                        <td th:text="${produtos.nome}"></td>
-                                        <td th:text="${produtos.quantidade}"></td>
+                                        <td th:text="${categorias.name}"></td>
+                                        <td th:text="${categorias.id}"></td>
                                         <td th:text="${produtos.preco}"></td>
                                         <td th:text="${produtos.categoria}"></td>
                                         <td th:text="${produtos.fornecedor}"></td>
@@ -315,6 +329,55 @@
         </div>
     </div>
 
+
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Script de Manipulação do Formulário -->
+    <script>
+        $(document).ready(function() {
+            $('form.user').on('submit', function(e) {
+                e.preventDefault(); // Impede o comportamento padrão de recarregar a página
+
+                var formData = $(this).serialize(); // Serializa os dados do formulário
+                $.ajax({
+                    url: '/categorias/categoria/cadastrar',
+                    type: 'POST',
+                    data: formData,
+                    success: function(response) {
+                        // Limpa os campos do formulário após a inserção bem-sucedida
+                        $('input[name="name"]').val('');
+                        $('input[name="id"]').val('');
+
+                        // Atualiza a div de mensagem para exibir a mensagem de sucesso
+                        $('#mensagemSucesso').show().text('Categoria inserida com sucesso!').css('font-size', '2em');
+                        $('#mensagemErro').hide(); // Esconde a mensagem de erro, se estiver visível
+
+                        // Esconde a div novamente após alguns segundos
+                        setTimeout(function() {
+                            $('#mensagemSucesso').hide();
+                        }, 3000); // Mostra a mensagem por 3 segundos
+                    },
+                    error: function(xhr, status, error) {
+                        // Atualiza a div de mensagem para exibir a mensagem de erro
+                        $('#mensagemErro').show().text('Erro na inserção da Categoria!').css('font-size', '2em');
+                        $('#mensagemSucesso').hide(); // Esconde a mensagem de sucesso, se estiver visível
+
+                        // Esconde a div novamente após alguns segundos
+                        setTimeout(function() {
+                            $('#mensagemErro').hide();
+                        }, 3000); // Mostra a mensagem por 3 segundos
+
+                        // Log de erro para depuração
+                        console.error('Erro:', error);
+                    }
+                });
+            });
+        });
+    </script>
+
+
     <!-- Bootstrap core JavaScript-->
     <script th:src="@{/vendor/jquery/jquery.min.js}"></script>
     <script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
@@ -328,6 +391,8 @@
     <!-- Page level plugins -->
     <script th:src="@{/vendor/datatables/jquery.dataTables.min.js}"></script>
     <script th:src="@{/vendor/datatables/dataTables.bootstrap4.min.js}"></script>
+
+
 
     <!-- Page level custom scripts -->
     <script th:src="@{/js/demo/datatables-demo.js}"></script>
