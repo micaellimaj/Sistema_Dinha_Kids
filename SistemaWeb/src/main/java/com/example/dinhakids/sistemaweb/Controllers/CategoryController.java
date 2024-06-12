@@ -15,7 +15,7 @@ import java.util.List;
 
 
 @Controller
-@RequestMapping("/categorias")
+@RequestMapping("/categorias/categoria")
 public class CategoryController {
 
     @Autowired
@@ -23,6 +23,14 @@ public class CategoryController {
     @Autowired
     private CategoryRepository categoryRepository;
 
+
+    // Retorna a página com a lista de categorias
+    @GetMapping("/tabela")
+    public String listarCategorias(Model model) {
+        List<Category> categorias = categoryService.getCategorys(); // Supondo que este método retorne todas as categorias
+        model.addAttribute("tabela", categorias);
+        return "categoria"; // Nome da view que exibe as categorias
+    }
 
     //retorna todas as categorias
     @GetMapping

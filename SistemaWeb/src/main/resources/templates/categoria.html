@@ -194,30 +194,17 @@
                                             <div class="text-center">
                                                 <h1 class="h4 text-gray-900 mb-4">Adicione o produto aqui!</h1>
                                             </div>
-                                            <form class="user" method="POST" action="/produtos/tables/cadastrar">
+                                            <form class="user" method="POST" action="/categorias/categoria/cadastrar">
                                                 <div class="form-group row">
                                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                                        <input type="text" class="form-control form-control-user" name="name"placeholder="nome do produto">
+                                                        <input type="text" class="form-control form-control-user" name="name"placeholder="Nome da categoria">
                                                     </div>
 
                                                     <div class="col-sm-6">
-                                                        <input type="number" class="form-control form-control-user"  name ="quantity"
-                                                               placeholder="Quantidade">
+                                                        <input type="number" class="form-control form-control-user"  name ="id"
+                                                               placeholder="id da categoria">
                                                     </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="number" class="form-control form-control-user" name="price" placeholder="preço do produto">
-                                                </div>
-                                                <div class="form-group row">
-                                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                                        <input type="text" class="form-control form-control-user"
-                                                               name="category" placeholder="id da categoria">
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <input type="text" class="form-control form-control-user"
-                                                               name="id" placeholder="Referência do Produto">
-                                                    </div>
-                                                </div>
+
                                                 <button type="submit" class="btn btn-primary btn-user btn-block">
                                                     Salvar dados
                                                 </button>
