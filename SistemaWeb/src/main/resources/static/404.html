@@ -9,7 +9,7 @@
     <meta name="author" content="">
 
     <title>sbAdmin2404</title>
-       <link rel="shortcut icon" href="iconetitulo/icon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
     <!-- Fontes personalizadas para este modelo-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
@@ -43,7 +43,7 @@
 
             <!-- Item de navegação - Painel -->
             <li class="nav-item">
-                <a class="nav-link" href="../templates/cadastro.html">
+                <a class="nav-link" href="dashboard.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Painel</span>
                 </a>
@@ -67,22 +67,26 @@
             </div>
 
             <!-- Item de navegação - Menu de recolhimento de páginas -->
-            <li class="nav-item active">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
-                    aria-controls="collapsePages">
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                   aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Páginas</span>
                 </a>
-                <div id="collapsePages" class="collapse show" aria-labelledby="headingPages"
-                    data-parent="#accordionSidebar">
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Telas de login:</h6>
-                        <a class="collapse-item" href="../templates/login.html">Conecte-se</a>
-                        <a class="collapse-item" href="../templates/cadastro.html">Registro</a>
+                        <a class="collapse-item" href="/login.html">Login</a>
+                        <a class="collapse-item" href="/dinha/cadastro/pagina">Cadastrar</a>
+
                         <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Outras páginas:</h6>
-                        <a class="collapse-item active" href="404.html">404 Página
-                        </a>
+                        <h6 class="collapse-header">Tabelas:</h6>
+                        <a class="collapse-item" href="/categorias/categoria/tabela">Tabela categoria</a>
+                        <a class="collapse-item" href="/produtos/tables/tabela">Tabela produtos</a>
+
+                        <div class="collapse-divider"></div>
+                        <h6 class="collapse-header">Outras Páginas:</h6>
+                        <a class="collapse-item" href="404.html">404 Página</a>
                         <a class="collapse-item" href="blank.html">Página em branco</a>
                     </div>
                 </div>
@@ -90,12 +94,6 @@
 
 
 
-            <!-- Item de navegação - Tabelas -->
-            <li class="nav-item">
-                <a class="nav-link" href="../templates/tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tabela</span></a>
-            </li>
 
             <!-- Divisor -->
             <hr class="sidebar-divider d-none d-md-block">

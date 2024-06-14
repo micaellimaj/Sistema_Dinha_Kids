@@ -29,6 +29,16 @@
         .error {
             color: red !important; /* Adicionando !important */
         }
+
+        .button-container {
+        margin-top: 20px; /* Ajusta conforme necessário */
+        width: 100%; /* Ocupa toda a largura disponível */
+    }
+
+    .btn-user {
+        width: auto; /* Ajusta automaticamente a largura baseada no conteúdo */
+    }
+
     </style>
 
     <!-- Fontes personalizadas para este modelo -->
@@ -39,7 +49,7 @@
     <link th:href="@{/css/sb-admin-2.min.css}" rel="stylesheet">
     <link th:href="@{/css/sb-admin-2.css}" rel="stylesheet">
 
-    <link rel="shortcut icon" th:href="@{/iconetitulo/icon.ico}" type="image/x-icon">
+    <link rel="shortcut icon" th:href="@{/img/favicon.ico}" type="image/x-icon">
 
 
     <!-- Custom styles for this page -->
@@ -119,12 +129,7 @@
             </li>
 
 
-            <!-- Nav Item - Tables -->
-            <li class="nav-item active">
-                <a class="nav-link" >
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tabela</span></a>
-            </li>
+
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -212,7 +217,7 @@
                             <div class="card-body p-0">
                                 <!-- Linha aninhada no corpo do cartão -->
                                 <div class="row">
-                                    <div class="col-lg-5 d-none d-lg-block" th:style="'background-image: url(' + @{/img/produtos.jpeg} + '); background-size: cover;'"></div>
+                                    <div class="col-lg-5 d-none d-lg-block" th:style="'background-image: url(' + @{/img/produto3.jpeg} + '); background-size: cover;'"></div>
 
 
                                     <div class="col-lg-7">
@@ -223,21 +228,24 @@
                                             <form class="user" method="POST" action="/categorias/categoria/cadastrar">
                                                 <div class="form-group row">
                                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                                        <input type="text" class="form-control form-control-user" name="name"placeholder="Nome da categoria">
+                                                        <input type="text" class="form-control form-control-user" name="name" placeholder="Nome da categoria">
                                                     </div>
 
                                                     <div class="col-sm-6">
-                                                        <input type="number" class="form-control form-control-user"  name ="id"
-                                                               placeholder="id da categoria">
+                                                        <input type="number" class="form-control form-control-user" name="id" placeholder="id da categoria">
                                                     </div>
 
-                                                <button type="submit" class="btn btn-primary btn-user btn-block">
-                                                    Salvar dados
-                                                </button>
-                                                <hr>
+                                                    <!-- Envolve o botão em uma div com classe 'button-container' -->
+                                                    <div class="button-container">
+                                                        <button type="submit" class="btn btn-primary btn-user btn-block">
+                                                            Salvar dados
+                                                        </button>
+                                                    </div>
+                                                    <hr>
                                                     <div id="mensagemSucesso" class="message success"></div>
                                                     <div id="mensagemErro" class="message error"></div>
                                             </form>
+                                        </div>
                                             <hr>
 
                                         </div>
@@ -252,7 +260,7 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Tabela de Produtos</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
