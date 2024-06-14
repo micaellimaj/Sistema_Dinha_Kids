@@ -32,8 +32,7 @@ public class ProductController {
     private ProductService productService;
     @Autowired
     private ProductRepository productRepository;
-    @Autowired
-    private CategoryRepository categoryRepository;
+
 
     //retorna  a página
     @GetMapping("/tabela")
@@ -61,7 +60,7 @@ public class ProductController {
     @PostMapping(path = "/cadastrar")
     public ResponseEntity<ProductResponseDTO> createProduct(@ModelAttribute ProductCreateDTO dto, Model model){
 
-        Product product = dto.createProduct(productRepository, categoryRepository);
+        Product product = productService.createProduct(dto);
         productRepository.save(product);
         return ResponseEntity.ok(new ProductResponseDTO(product));
     }
@@ -84,16 +83,4 @@ public class ProductController {
 
 
 }
-/*
 
-//retorna todos os produtos - REMOVIDO PARA RETORNAR A PÁGINA
-    @GetMapping
-    public ResponseEntity<List<ProductResponseDTO>> getProduct(){
-        List<Product> products = productService.getProducts();
-
-        return ResponseEntity.ok(products.stream()
-                .map(ProductResponseDTO ::new)
-                .collect(Collectors.toList()));
-
-
-*/

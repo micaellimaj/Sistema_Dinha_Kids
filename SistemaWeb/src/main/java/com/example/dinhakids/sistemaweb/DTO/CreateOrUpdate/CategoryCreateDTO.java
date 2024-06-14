@@ -11,7 +11,7 @@ import org.hibernate.validator.constraints.Length;
 public class CategoryCreateDTO {
 
     @NotBlank(message = "Id da categoria não informado")
-    private int id;
+    private int categoryid;
 
     @NotBlank(message = "Nome da categoria não informado")
     @Length(max = 45, message = "Nome da categoria não pode exceder 45 caracteres")
@@ -20,7 +20,7 @@ public class CategoryCreateDTO {
     public Category createCategory(Category category) {
         category = new Category();
 
-        category.setId(id);
+        category.setId(categoryid);
         category.setName(name);
 
         return category;

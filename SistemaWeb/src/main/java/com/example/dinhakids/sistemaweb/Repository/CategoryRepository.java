@@ -4,7 +4,7 @@ import com.example.dinhakids.sistemaweb.Models.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
-public interface CategoryRepository extends JpaRepository<Category, String> {
+public interface CategoryRepository extends JpaRepository<Category, Integer> {
 
     boolean existsByName(String name);
 
@@ -14,5 +14,5 @@ public interface CategoryRepository extends JpaRepository<Category, String> {
 
     boolean existsById(int id);
 
-    Optional<Category> findById(int categoryId);
+    Optional<Category> findById(int id);
 }

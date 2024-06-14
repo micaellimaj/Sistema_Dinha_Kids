@@ -33,7 +33,7 @@ public class CategoryController {
     }
 
     //retorna todas as categorias
-    @GetMapping
+    @GetMapping("/a")
     public ResponseEntity<List<Category>> getCategory(){
         List<Category> Category = categoryService.getCategorys();
 

@@ -9,12 +9,15 @@ public class ProductResponseDTO {
     private String name;
     private int quantity;
     private double price;
+    private int category_id;
+
 
     public ProductResponseDTO(Product product) {
         this.id = product.getId();
         this.name = product.getName();
         this.quantity = product.getQuantity();
         this.price = product.getPrice();
+        this.category_id = product.getCategory().getId();
 
     }
 }

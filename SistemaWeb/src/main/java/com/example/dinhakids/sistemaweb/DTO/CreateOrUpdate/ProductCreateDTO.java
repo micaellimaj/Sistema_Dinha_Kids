@@ -16,6 +16,8 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class ProductCreateDTO {
 
+    private Category category;
+
     @NotBlank(message = "Nome do produto não informado")
     @Length(max = 145, message = "Nome do produto não pode exceder 45 caracteres")
     private String name;
@@ -29,21 +31,6 @@ public class ProductCreateDTO {
     @Min(value = 0, message = "Preço deve ser um número inteiro e não negativo")
     private double price;
 
-    private int categoryId;
 
-    public Product createProduct(ProductRepository productRepository, CategoryRepository categoryRepository){
-        Product product = new Product();
-
-        product.setName(name);
-        product.setId(id);
-        product.setQuantity(quantity);
-        product.setPrice(price);
-        product.setLastUpdate(LocalDateTime.now());
-        product.setCreatedAt(LocalDateTime.now());
-        Category category = categoryRepository.findById(categoryId).orElseThrow(() -> new CategoryNotFoundException("Categoria não encontrada"));
-        product.setCategory(category);
-
-        return product;
-    }
 }
 
