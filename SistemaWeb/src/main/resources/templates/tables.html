@@ -235,12 +235,9 @@
                                                 <button type="submit" class="btn btn-primary btn-user btn-block">
                                                     Salvar dados
                                                 </button>
-                                                <!--
+                                                <hr>
                                                 <div id="mensagemSucesso" class="message success"></div>
                                                 <div id="mensagemErro" class="message error"></div>
-                                                                 -->
-                                                <hr>
-
                                             </form>
                                             <hr>
 
@@ -263,34 +260,28 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
+                                            <th>Referência id</th>
                                             <th>Nome</th>
                                             <th>quantidade</th>
                                             <th>preco</th>
-                                            <th>categoria</th>
-                                            <th>fornecedor</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
+                                            <th>Referência id</th>
                                             <th>Nome</th>
                                             <th>quantidade</th>
                                             <th>preco</th>
-                                            <th>categoria</th>
-                                            <th>fornecedor</th>
                                         </tr>
                                     </tfoot>
 
                                     <tbody>
-                                    <!-- Model   $ Controller - nome que vai está se referindo a isso daqui -->
-                                    <!--
-                                    <tr th:each="produtos : ${ProdutosController}">
-                                        <td th:text="${produtos.nome}"></td>
-                                        <td th:text="${produtos.quantidade}"></td>
-                                        <td th:text="${produtos.preco}"></td>
-                                        <td th:text="${produtos.categoria}"></td>
-                                        <td th:text="${produtos.fornecedor}"></td>
+                                    <tr th:each="produto : ${produtos}">
+                                        <td th:text="${produto.id}"></td>
+                                        <td th:text="${produto.name}"></td>
+                                        <td th:text="${produto.quantity}"></td>
+                                        <td th:text="${produto.price}"></td>
                                     </tr>
-                                    -->
                                     </tbody>
                                 </table>
                             </div>
@@ -346,11 +337,10 @@
 
 
         <!-- Include jQuery library -->
-    <!--
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
--->
+
     <!-- Script de Manipulação do Formulário -->
-    <!--
+
     <script>
         $(document).ready(function() {
             $('form.user').on('submit', function(e) {
@@ -396,7 +386,7 @@
         });
     </script>
 
--->
+
     <!-- Bootstrap core JavaScript-->
     <script th:src="@{/vendor/jquery/jquery.min.js}"></script>
     <script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>

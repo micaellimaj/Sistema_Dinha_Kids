@@ -25,7 +25,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-@RequestMapping("/produtos/tables") //@RequestMapping("/produtos") Alterei para fazer ligação com o html
+@RequestMapping("/produtos/tables")
 public class ProductController {
 
     @Autowired
@@ -33,54 +33,48 @@ public class ProductController {
     @Autowired
     private ProductRepository productRepository;
 
-
-    //retorna  a página
+    // Retorna a página com a lista de produtos
     @GetMapping("/tabela")
     public String listarProdutos(Model model) {
         List<Product> produtos = productService.getProducts();
-        model.addAttribute("tabela", produtos);
-        return "tables"; // Assumindo que o arquivo do template é chamado listaProdutos.html
+        model.addAttribute("produtos", produtos);  // Alterado para "produtos"
+        return "tables"; // Assumindo que o arquivo do template é chamado tables.html
     }
 
-    //retorna os produtos pelo id
+    // Retorna os produtos pelo ID
     @GetMapping(path = "/{id}")
     public ResponseEntity<ProductResponseDTO> getProductById(@PathVariable int id){
         Product product = productService.getProductById(id);
         return ResponseEntity.ok(new ProductResponseDTO(product));
     }
 
-    //retorna os produtos pelo nome
+    // Retorna os produtos pelo nome
     @GetMapping(path = "/nome/{name}")
     public ResponseEntity<ProductResponseDTO> getProductByName(@PathVariable String name){
         Product product = productService.getProductByName(name);
         return ResponseEntity.ok(new ProductResponseDTO(product));
     }
 
-    //cria novos produtos
+    // Cria novos produtos
     @PostMapping(path = "/cadastrar")
     public ResponseEntity<ProductResponseDTO> createProduct(@ModelAttribute ProductCreateDTO dto, Model model){
-
         Product product = productService.createProduct(dto);
         productRepository.save(product);
         return ResponseEntity.ok(new ProductResponseDTO(product));
     }
 
-
-    //atualiza os produtos
+    // Atualiza os produtos
     @PutMapping(path = "/{id}")
     public ResponseEntity<ProductResponseDTO> updateProduct(@PathVariable int id, @ModelAttribute @Valid ProductUpdateDTO dto, Model model){
         Product product = productService.updateProduct(dto, id);
         return ResponseEntity.ok(new ProductResponseDTO(product));
     }
 
-    //deleta os produtos pelo id
+    // Deleta os produtos pelo ID
     @DeleteMapping(path = "/{id}")
     public ResponseEntity<Void> deleteProduct(@PathVariable int id){
         productService.deleteProduct(id);
         return ResponseEntity.noContent().build();
     }
-
-
-
 }
 
