@@ -10,6 +10,26 @@
 
     <title>Dinha Kids - Tabela </title>
 
+    <!-- Estilo do Formulário -->
+
+    <style>
+        .message {
+            display: none;
+            padding: 10px;
+            margin-top: 10px;
+            width: 100%; /* Garantindo que ambas as mensagens tenham o mesmo tamanho */
+            white-space: nowrap;
+        }
+        .success {
+            color: green !important; /* Adicionando !important */
+            font-size: 2em; /* Tamanho do texto ajustado para o dobro do tamanho */
+        }
+        .error {
+            color: red !important; /* Adicionando !important */
+        }
+    </style>
+
+
     <!-- Fontes personalizadas para este modelo -->
     <link th:href="@{/vendor/fontawesome-free/css/all.min.css}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -81,7 +101,12 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Telas de login:</h6>
                         <a class="collapse-item" th:href="@{/login.html}">Login</a>
-                        <a class="collapse-item" th:href="@{/cadastro}">Cadastrar</a>
+                        <a class="collapse-item" th:href="@{/dinha/cadastro/pagina}">Cadastrar</a>
+
+                        <div class="collapse-divider"></div>
+                        <h6 class="collapse-header">Tabelas:</h6>
+                        <a class="collapse-item" th:href="@{/categorias/categoria/tabela}">Tabela categoria</a>
+                        <a class="collapse-item" th:href="@{/produtos/tables/tabela}">Tabela produtos</a>
 
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Outras Páginas:</h6>
@@ -93,12 +118,6 @@
             </li>
 
 
-            <!-- Nav Item - Tables -->
-            <li class="nav-item active">
-                <a class="nav-link" >
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tabela</span></a>
-            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -221,8 +240,10 @@
                                                 <button type="submit" class="btn btn-primary btn-user btn-block">
                                                     Salvar dados
                                                 </button>
-
-
+                                                <!--
+                                                <div id="mensagemSucesso" class="message success"></div>
+                                                <div id="mensagemErro" class="message error"></div>
+                                                                 -->
                                                 <hr>
 
                                             </form>
@@ -328,6 +349,59 @@
         </div>
     </div>
 
+
+        <!-- Include jQuery library -->
+    <!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+-->
+    <!-- Script de Manipulação do Formulário -->
+    <!--
+    <script>
+        $(document).ready(function() {
+            $('form.user').on('submit', function(e) {
+                e.preventDefault(); // Impede o comportamento padrão de recarregar a página
+
+                var formData = $(this).serialize(); // Serializa os dados do formulário
+                $.ajax({
+                    url: '/produtos/tables/cadastrar',
+                    type: 'POST',
+                    data: formData,
+                    success: function(response) {
+                        // Limpa os campos do formulário após a inserção bem-sucedida
+                        $('input[name="name"]').val('');
+                        $('input[name="quantity"]').val('');
+                        $('input[name="price"]').val('');
+                        $('input[name="category"]').val('');
+                        $('input[name="id"]').val('');
+
+                        // Atualiza a div de mensagem para exibir a mensagem de sucesso
+                        $('#mensagemSucesso').show().text('Produto inserido com sucesso!').css('font-size', '2em');
+                        $('#mensagemErro').hide(); // Esconde a mensagem de erro, se estiver visível
+
+                        // Esconde a div novamente após alguns segundos
+                        setTimeout(function() {
+                            $('#mensagemSucesso').hide();
+                        }, 3000); // Mostra a mensagem por 3 segundos
+                    },
+                    error: function(xhr, status, error) {
+                        // Atualiza a div de mensagem para exibir a mensagem de erro
+                        $('#mensagemErro').show().text('Erro na inserção do Produto!').css('font-size', '2em');
+                        $('#mensagemSucesso').hide(); // Esconde a mensagem de sucesso, se estiver visível
+
+                        // Esconde a div novamente após alguns segundos
+                        setTimeout(function() {
+                            $('#mensagemErro').hide();
+                        }, 3000); // Mostra a mensagem por 3 segundos
+
+                        // Log de erro para depuração
+                        console.error('Erro:', error);
+                    }
+                });
+            });
+        });
+    </script>
+
+-->
     <!-- Bootstrap core JavaScript-->
     <script th:src="@{/vendor/jquery/jquery.min.js}"></script>
     <script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
