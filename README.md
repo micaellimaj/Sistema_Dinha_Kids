@@ -31,8 +31,22 @@ Construção de um power bi com conexão MySQL para análise das peças de roupa
 
 <table>
   <tr>
-    <td><img src="IMG/cadastro.png" alt="pagina1" width="400"/></td>
-    <td><img src="IMG/table.png" alt="pagina2" width="400"/></td>
+    <td><img src="IMG/img1.png" alt="pagina1" width="400"/></td>
+    <td><img src="IMG/img2.png" alt="pagina2" width="400"/></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td><img src="IMG/img3.png" alt="pagina1" width="400"/></td>
+    <td><img src="IMG/img4.png" alt="pagina2" width="400"/></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td><img src="IMG/img5.png" alt="pagina1" width="400"/></td>
+    <td><img src="IMG/img6.png" alt="pagina2" width="400"/></td>
   </tr>
 </table>
 
