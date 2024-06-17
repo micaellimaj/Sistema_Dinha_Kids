@@ -1,4 +1,4 @@
-# Site Full stack Java: Dinha Kids
+# ☕ Site Full stack Java: Dinha Kids 
 
 <div align="center">
  
@@ -6,11 +6,11 @@
   </div>
 
   
-## Arquitetura do Projeto:
+## 📃 Arquitetura do Projeto:
 
 ![arquitetura do Projeto](IMG/arquiteturajava.gif)
 
-##  Introdução
+## 🔍 Introdução
 
 Este projeto envolve o desenvolvimento de um site full stack, utilizando Java para o Back-End e HTML, CSS, e JavaScript para o Front-End. O projeto foi realizado como parte da disciplina de Programação Orientada a Objetos em Java na faculdade. Com o objetivo de aplicar nossos conhecimentos em um cenário real, estabelecemos uma parceria com a Dinha Kids, uma empresa de confecção de roupas infantis, que necessitava de um sistema para armazenar e gerenciar seus produtos. Durante o projeto, houve um contato direto e contínuo com o cliente para levantamento de requisitos e feedback constante. A Dinha Kids precisava de um sistema eficiente para controle e gestão de estoques e clientes. Após uma visita à fábrica e conversas com os funcionários, identificamos as seguintes necessidades:
 
@@ -19,14 +19,14 @@ Este projeto envolve o desenvolvimento de um site full stack, utilizando Java pa
 
 O trabalho desenvolvido visa auxiliar no controle e gestão dos produtos e clientes, melhorando a manipulação de dados cruciais para o negócio. Este esforço resultará na criação de um software que a empresa poderá usar como uma ferramenta diária em suas operações.
 
-##  Objetivo
+## 💬 Objetivo
 
 * **Desenvolver e adquirir conhecimento sobre a linguagem de programação Java**: Aplicar os conceitos aprendidos em sala de aula em um projeto prático, aumentando nosso conhecimento e experiência.
 * **Concluir o sistema para o cliente dentro do prazo determinado**: Demonstrar nossa capacidade e compromisso com a empresa.
 * **Garantir uma operação mais eficiente e satisfatória**: Proporcionar uma ferramenta que melhore a eficiência operacional da Dinha Kids e a satisfação de seus clientes.
 
 
-## Tecnologias Utilizadas
+## 📱 Tecnologias Utilizadas
 
 <div align="center" style="display: inline_block">
 <img align="center" alt="HTML5" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />  
@@ -44,7 +44,7 @@ O trabalho desenvolvido visa auxiliar no controle e gestão dos produtos e clien
 
 
 
-## Requisitos Essenciais e Critérios de Avaliação
+## 🎖️ Requisitos Essenciais e Critérios de Avaliação
 
 | Requisito Essencial                  | Descrição                                                                 | Critério de Avaliação                                 | Método de Avaliação                                    |
 |--------------------------------------|---------------------------------------------------------------------------|-------------------------------------------------------|-------------------------------------------------------|
@@ -62,7 +62,7 @@ O trabalho desenvolvido visa auxiliar no controle e gestão dos produtos e clien
 | Fácil Organização de Produtos        | Permitir a organização fácil e eficiente dos produtos inseridos no sistema. | Facilidade de organização e acesso aos produtos.       | Testes de organização, feedback dos usuários.          |
 
 
-## Etapas do Desenvolvimento:
+## 🖥️ Etapas do Desenvolvimento:
 
 - **Back-End**:
   - Linguagem: Java
@@ -90,7 +90,7 @@ O trabalho desenvolvido visa auxiliar no controle e gestão dos produtos e clien
   - Conexão: Ligado ao banco de dados MySQL da Dinha Kids
   - Função: Permitir a análise de dados para tomada de decisão informada
  
-## Atributos do Banco de dados:
+## 📶 Atributos do Banco de dados:
 
 * Tabela de Categoria de Produtos:
 
@@ -114,7 +114,7 @@ O trabalho desenvolvido visa auxiliar no controle e gestão dos produtos e clien
 
 
  
-## Capturas de interface:
+## 📸 Capturas de interface:
 
 <table>
  <tr>
@@ -171,7 +171,7 @@ O trabalho desenvolvido visa auxiliar no controle e gestão dos produtos e clien
 
 
  
-## Equipe do Projeto
+## 🫂 Equipe do Projeto
 
 1. [Matheus José](https://github.com/th3us117) -> Administração de Projeto : 
   * **Responsabilidades**: Documentação, levantamento de requisitos, e contato direto com a empresa.
@@ -184,11 +184,11 @@ O trabalho desenvolvido visa auxiliar no controle e gestão dos produtos e clien
 5. [Jacciano do Nascimento](https://github.com/jacciano) -> Função: Desenvolvedor Front-End :
   * **Responsabilidades**: Criação e manutenção da interface do usuário, implementação de design responsivo, e adaptação do template web para as necessidades do projeto.
     
-##  Visualização do Site
+## 🌐 Visualização do Site
 
 ![Visualização do Projeto](IMG/dinha3.gif)
 
-## Estrutura do repositório
+## 🗃️ Estrutura do repositório
 
 ------------
 
@@ -233,7 +233,7 @@ O trabalho desenvolvido visa auxiliar no controle e gestão dos produtos e clien
     │
     └──
 
-## Conclusão 
+## 💾 Conclusão 
 
 O desenvolvimento do sistema de gerenciamento de produtos para a Dinha Kids foi uma experiência enriquecedora e altamente educacional para toda a equipe. Ao longo do projeto, fomos capazes de aplicar teorias e conceitos aprendidos em sala de aula em um ambiente prático e colaborativo, o que nos permitiu compreender melhor os desafios e as demandas reais do mercado de trabalho.
 
@@ -241,7 +241,7 @@ Estamos confiantes de que as habilidades e conhecimentos adquiridos ao longo des
 
 Agradecemos à Dinha Kids pela oportunidade de colaborar em um projeto tão significativo e ao professor Wolney pelo apoio contínuo e orientação valiosa durante todo o processo. Estamos animados para enfrentar novos desafios e continuar a crescer como desenvolvedores e profissionais.
 
-## Referências:
+## 📎 Referências:
 
 *  Documentações e links úteis:
 [thymeleaf](https://www.thymeleaf.org/doc/tutorials/3.1/usingthymeleaf.html)/
