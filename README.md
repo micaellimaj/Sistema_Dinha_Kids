@@ -123,70 +123,73 @@ O trabalho desenvolvido visa auxiliar no controle e gestão dos produtos e clien
  
 ## Equipe do Projeto
 
-1. [Matheus José](https://github.com/th3us117) :
-  * Função: Administração de Projeto
-  * Responsabilidades: Documentação, levantamento de requisitos, e contato direto com a empresa.
-2. [Júlio Rodrigo](https://github.com/JRodrigo19) :  
-  * Função: Desenvolvedor Back-End
-  * Responsabilidades: Implementação e manutenção do back-end, desenvolvimento de APIs, e integração com o banco de dados.
-3. [José Vinícius](https://github.com/vtenorio309) :
-  * Função: Analista de Banco de Dados
-  * Responsabilidades: Modelagem de banco de dados, otimização de consultas, e gerenciamento do banco de dados MySQL.
-4. [Micael José](https://github.com/micaellimaj) :
-  * Função: Desenvolvedor Back-End
-  * Responsabilidades: Desenvolvimento de funcionalidades do servidor, implementação de lógica de negócios, e suporte na integração com o front-end.
-5. [Jacciano do Nascimento](https://github.com/jacciano) :
-  * Função: Desenvolvedor Front-End
-  * Responsabilidades: Criação e manutenção da interface do usuário, implementação de design responsivo, e adaptação do template web para as necessidades do projeto.
+1. [Matheus José](https://github.com/th3us117) -> Administração de Projeto : 
+  * **Responsabilidades**: Documentação, levantamento de requisitos, e contato direto com a empresa.
+2. [Júlio Rodrigo](https://github.com/JRodrigo19) -> Desenvolvedor Back-End :  
+  * **Responsabilidades**: Implementação e manutenção do back-end, desenvolvimento de APIs, e integração com o banco de dados.
+3. [José Vinícius](https://github.com/vtenorio309)  -> Analista de Banco de Dados :
+  * **Responsabilidades**: Modelagem de banco de dados, otimização de consultas, e gerenciamento do banco de dados MySQL.
+4. [Micael José](https://github.com/micaellimaj) -> Desenvolvedor Back-End :
+  * **Responsabilidades**: Desenvolvimento de funcionalidades do servidor, implementação de lógica de negócios, e suporte na integração com o front-end.
+5. [Jacciano do Nascimento](https://github.com/jacciano) -> Função: Desenvolvedor Front-End :
+  * **Responsabilidades**: Criação e manutenção da interface do usuário, implementação de design responsivo, e adaptação do template web para as necessidades do projeto.
 
 ## Estrutura do repositório
 
 ------------
 
 
-    ├── requirements.txt          <- O arquivo de requisitos para reproduzir o ambiente de análise, por exemplo, gerado com `pip congelamento > requisitos.txt
     │
-    ├── LICENSE
+    ├── LICENSE                    <- Licença do projeto
     │
-    ├── README.md                 <- O Readme de nível superior para desenvolvedores que usam esse projeto
+    ├── README.md                  <- O Readme de nível superior para desenvolvedores que usam esse projeto
     │ 
-    ├── streamlit                 <- configuração do design do layout
-    │
-    ├── Imagem                    <- Contém a logo do projeto
-    │
-    ├── Documentação              <- Contém a documentação do projeto e a apresentação feita em sala de aula
-    │
-    ├── pages                     <- Contém a páginas utilizadas no projeto, aqui apenas a 2º página
+    ├── Documentação               <- Contém a documentação do projeto
     │   
-    ├── 1_clientes                <- Página principal de inicialização do projeto
+    ├── .idea                      <- Configurações do IntelliJ IDEA
     │ 
-    ├── painel                    <- Capturas do painel interativo e arquitetura
+    ├── IMG                        <- Imagens da interface
     │ 
-    ├── Sistemaweb                <- datasets utilizados no projeto, incluindo o arquivo original e o arquivo após o processamento.
-    │   ├── pom.xml  <- datasets de perfil de clientes original
-    │   ├── .mvn/wrapper              <- datasets modificado
-    │   ├── src
-    │        ├── main
-    │              ├── Controllers
-    │              ├── DTO
-    │              ├── Models
-    │              ├── Repository
-    │              ├── Services
-    │              ├── exceptions
-    │              ├── SistemaWebApplication.java
+    ├── Sistemaweb                 <- Diretório principal do projeto Spring Boot
+    │   ├── pom.xml                <- Arquivo de configuração do Maven, que gerencia as dependências do projeto
+    │   ├── .mvn/wrapper           <- Arquivos do Maven Wrapper
+    │   ├── .metadata              <- Metadados do projeto
+    │   ├── .idea                  <- Configurações do projeto para IntelliJ IDEA
+    │   ├── src                    <- Diretório principal do código-fonte
+    │        ├── main              <- Diretório para os arquivos principais do código
+    │         ├── java/com/example/dinhakids/sistemaweb
+    │                ├── Controllers       <- Controladores responsáveis por receber as requisições HTTP e devolver as respostas apropriadas
+    │                ├── DTO               <- Objetos de Transferência de Dados (Data Transfer Objects) usados para transportar dados entre camadas
+    │                ├── Models            <- Modelos que representam as entidades do sistema
+    │                ├── Repository        <- Repositórios responsáveis pela interação com o banco de dados
+    │                ├── Services          <- Serviços que contêm a lógica de negócios do sistema
+    │                ├── exceptions        <- Classes para tratamento de exceções
+    │                ├── SistemaWebApplication.java  <- Classe principal que inicia a aplicação Spring Boot
     │         ├── resources
-    │             ├── static
-    │                 ├── css
-    │                 ├── iconetitulo
-    │                 ├── img
-    │                 ├── js
-    │                 ├── vendor
-    │                 ├── páginas.html
-    │             ├── templates
-    │                 ├── páginas.html
-    │             ├── application.properties
+    │              ├── static              <- Arquivos estáticos como CSS, imagens e JavaScript
+    │                 ├── css              <- Arquivos CSS
+    │                 ├── iconetitulo      <- Ícones e favicons do site
+    │                 ├── img              <- Imagens utilizadas na interface
+    │                 ├── js               <- Arquivos JavaScript
+    │                 ├── vendor           <- Dependências de terceiros (bibliotecas)
+    │                 ├── páginas.html     <- Arquivos HTML estáticos
+    │               ├── templates
+    │                 ├── páginas.html     <- Templates Thymeleaf para renderização dinâmica
+    │               ├── application.properties <- Arquivo de configuração do Spring Boot
     │
-    │
-    │
-    └──notebook                   <- caderno jupyter notebook utilizado para o pré-processamento de dados
+    └──
+
+## Conclusão da Equipe
+
+O desenvolvimento do sistema de gerenciamento de produtos para a Dinha Kids foi uma experiência enriquecedora e altamente educacional para toda a equipe. Ao longo do projeto, fomos capazes de aplicar teorias e conceitos aprendidos em sala de aula em um ambiente prático e colaborativo, o que nos permitiu compreender melhor os desafios e as demandas reais do mercado de trabalho.
+
+Estamos confiantes de que as habilidades e conhecimentos adquiridos ao longo deste projeto serão altamente benéficos em nossas futuras carreiras. Esperamos continuar a aplicar e expandir esses conhecimentos em novos projetos, contribuindo positivamente para a evolução da indústria de tecnologia.
+
+Agradecemos à Dinha Kids pela oportunidade de colaborar em um projeto tão significativo e ao professor Wolney pelo apoio contínuo e orientação valiosa durante todo o processo. Estamos animados para enfrentar novos desafios e continuar a crescer como desenvolvedores e profissionais.
+
+
+
+
+
+
     
