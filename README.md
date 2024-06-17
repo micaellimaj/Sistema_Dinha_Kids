@@ -2,8 +2,13 @@
 
 <div align="center">
  
- <td><img src="Dinha.jpeg" width="700" style="display: block; margin: 0 auto;" alt="Macedo"> </td>
+ <td><img src="Dinha.jpeg" width="600" style="display: block; margin: 0 auto;" alt="Dinha"> </td>
   </div>
+
+  
+## Arquitetura do Projeto:
+
+![arquitetura do Projeto](IMG/arquiteturajava.gif)
 
 ##  Introdução
 
@@ -114,6 +119,16 @@ O trabalho desenvolvido visa auxiliar no controle e gestão dos produtos e clien
   <tr>
     <td><img src="IMG/img5.png" alt="pagina1" width="400"/></td>
     <td><img src="IMG/img6.png" alt="pagina2" width="400"/></td>
+  </tr>
+</table>
+<table>
+ <tr>
+      <td><b> 404.html </b></td>
+      <td><b> blank.html </b></td>
+    </tr>
+  <tr>
+    <td><img src="IMG/img7.png" alt="pagina1" width="400"/></td>
+    <td><img src="IMG/img8.png" alt="pagina2" width="400"/></td>
   </tr>
 </table>
 
