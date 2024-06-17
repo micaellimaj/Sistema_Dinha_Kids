@@ -100,6 +100,10 @@ O trabalho desenvolvido visa auxiliar no controle e gestão dos produtos e clien
 ## Capturas de interface:
 
 <table>
+ <tr>
+      <td><b> Banco de dados </b></td>
+      <td><b> dashboard.html </b></td>
+    </tr>
   <tr>
     <td><img src="IMG/img1.png" alt="pagina1" width="400"/></td>
     <td><img src="IMG/img2.png" alt="pagina2" width="400"/></td>
@@ -107,6 +111,10 @@ O trabalho desenvolvido visa auxiliar no controle e gestão dos produtos e clien
 </table>
 
 <table>
+ <tr>
+      <td><b> categoria.html </b></td>
+      <td><b> categoria.html </b></td>
+    </tr>
   <tr>
     <td><img src="IMG/img3.png" alt="pagina1" width="400"/></td>
     <td><img src="IMG/img4.png" alt="pagina2" width="400"/></td>
@@ -114,11 +122,17 @@ O trabalho desenvolvido visa auxiliar no controle e gestão dos produtos e clien
 </table>
 
 <table>
+ <tr>
+      <td><b> tables.html </b></td>
+      <td><b> tables.html </b></td>
+    </tr>
   <tr>
     <td><img src="IMG/img5.png" alt="pagina1" width="400"/></td>
     <td><img src="IMG/img6.png" alt="pagina2" width="400"/></td>
   </tr>
 </table>
+
+
 
  
 ## Equipe do Projeto
