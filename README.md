@@ -139,4 +139,54 @@ O trabalho desenvolvido visa auxiliar no controle e gestão dos produtos e clien
   * Função: Desenvolvedor Front-End
   * Responsabilidades: Criação e manutenção da interface do usuário, implementação de design responsivo, e adaptação do template web para as necessidades do projeto.
 
+## Estrutura do repositório
 
+------------
+
+
+    ├── requirements.txt          <- O arquivo de requisitos para reproduzir o ambiente de análise, por exemplo, gerado com `pip congelamento > requisitos.txt
+    │
+    ├── LICENSE
+    │
+    ├── README.md                 <- O Readme de nível superior para desenvolvedores que usam esse projeto
+    │ 
+    ├── streamlit                 <- configuração do design do layout
+    │
+    ├── Imagem                    <- Contém a logo do projeto
+    │
+    ├── Documentação              <- Contém a documentação do projeto e a apresentação feita em sala de aula
+    │
+    ├── pages                     <- Contém a páginas utilizadas no projeto, aqui apenas a 2º página
+    │   
+    ├── 1_clientes                <- Página principal de inicialização do projeto
+    │ 
+    ├── painel                    <- Capturas do painel interativo e arquitetura
+    │ 
+    ├── Sistemaweb                <- datasets utilizados no projeto, incluindo o arquivo original e o arquivo após o processamento.
+    │   ├── pom.xml  <- datasets de perfil de clientes original
+    │   ├── .mvn/wrapper              <- datasets modificado
+    │   ├── src
+    │        ├── main
+    │              ├── Controllers
+    │              ├── DTO
+    │              ├── Models
+    │              ├── Repository
+    │              ├── Services
+    │              ├── exceptions
+    │              ├── SistemaWebApplication.java
+    │         ├── resources
+    │             ├── static
+    │                 ├── css
+    │                 ├── iconetitulo
+    │                 ├── img
+    │                 ├── js
+    │                 ├── vendor
+    │                 ├── páginas.html
+    │             ├── templates
+    │                 ├── páginas.html
+    │             ├── application.properties
+    │
+    │
+    │
+    └──notebook                   <- caderno jupyter notebook utilizado para o pré-processamento de dados
+    
