@@ -76,8 +76,7 @@ O trabalho desenvolvido visa auxiliar no controle e gestão dos produtos e clien
   - Ferramenta: Power BI
   - Conexão: Ligado ao banco de dados MySQL da Dinha Kids
   - Função: Permitir a análise de dados para tomada de decisão informada
-
-
+ 
 ## Capturas de interface:
 
 <table>
@@ -101,7 +100,23 @@ O trabalho desenvolvido visa auxiliar no controle e gestão dos produtos e clien
   </tr>
 </table>
 
+ 
+## Equipe do Projeto
 
-## Localização Dinha Kids:
+1. [Matheus José](https://github.com/th3us117) :
+  * Função: Administração de Projeto
+  * Responsabilidades: Documentação, levantamento de requisitos, e contato direto com a empresa.
+2. [Júlio Rodrigo](https://github.com/JRodrigo19) :  
+  * Função: Desenvolvedor Back-End
+  * Responsabilidades: Implementação e manutenção do back-end, desenvolvimento de APIs, e integração com o banco de dados.
+3. [José Vinícius](https://github.com/vtenorio309) :
+  * Função: Analista de Banco de Dados
+  * Responsabilidades: Modelagem de banco de dados, otimização de consultas, e gerenciamento do banco de dados MySQL.
+4. [Micael José](https://github.com/micaellimaj) :
+  * Função: Desenvolvedor Back-End
+  * Responsabilidades: Desenvolvimento de funcionalidades do servidor, implementação de lógica de negócios, e suporte na integração com o front-end.
+5. [Jacciano do Nascimento](https://github.com/jacciano) :
+  * Função: Desenvolvedor Front-End
+  * Responsabilidades: Criação e manutenção da interface do usuário, implementação de design responsivo, e adaptação do template web para as necessidades do projeto.
 
-* Caruaru, PE - "Capital do Forró"
+
