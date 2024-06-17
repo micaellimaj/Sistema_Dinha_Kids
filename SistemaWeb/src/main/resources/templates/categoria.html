@@ -10,7 +10,7 @@
 
 
 
-    <title>Dinha Kids - Tabela </title>
+    <title>Dinha Kids - Categoria </title>
 
     <!-- Estilo do Formulário -->
 
@@ -73,7 +73,7 @@
             <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Dinha Kids <sup>Tabela</sup></div>
+                <div class="sidebar-brand-text mx-3">Dinha Kids <sup>Categoria</sup></div>
             </a>
 
             <!-- Divider -->
@@ -109,24 +109,24 @@
                     <span>Páginas</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Tela de login:</h6>
-                        <a class="collapse-item" th:href="@{/login.html}">Login</a>
+                      <div class="bg-white py-2 collapse-inner rounded">
+                          <!--<h6 class="collapse-header">Tela de login:</h6>
+                          <a class="collapse-item" th:href="@{/login.html}">Login</a>-->
 
 
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Tabelas:</h6>
-                        <a class="collapse-item" th:href="@{/categorias/categoria/tabela}">Tabela categoria</a>
-                        <a class="collapse-item" th:href="@{/produtos/tables/tabela}">Tabela produtos</a>
+                          <div class="collapse-divider"></div>
+                          <h6 class="collapse-header">Tabelas:</h6>
+                          <a class="collapse-item" th:href="@{/categorias/categoria/tabela}">Tabela categoria</a>
+                          <a class="collapse-item" th:href="@{/produtos/tables/tabela}">Tabela produtos</a>
 
-                    </div>
-                </div>
-            </li>
-
-
+                      </div>
+                  </div>
+              </li>
 
 
-            <!-- Divider -->
+
+
+              <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
             <!-- Sidebar Toggler (Sidebar) -->
@@ -201,8 +201,8 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Tabela de Produtos</h1>
-                    <p class="mb-4"> Registro de Produtos da Dinha Kids.</p>
+                    <h1 class="h3 mb-2 text-gray-800">Tabela de Categoria de Produtos</h1>
+                    <p class="mb-4"> Registro de Categoria de Produtos da Dinha Kids.</p>
 
                     <!-- Formulário -->
 
@@ -218,19 +218,18 @@
                                     <div class="col-lg-7">
                                         <div class="p-5">
                                             <div class="text-center">
-                                                <h1 class="h4 text-gray-900 mb-4">Adicione o produto aqui!</h1>
+                                                <h1 class="h4 text-gray-900 mb-4">Adicione a categoria do produto aqui!</h1>
                                             </div>
                                             <form class="user" method="POST" action="/categorias/categoria/cadastrar">
                                                 <div class="form-group row">
                                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                                        <input type="text" class="form-control form-control-user" name="name" placeholder="Nome da categoria">
+                                                        <input type="text" class="form-control form-control-user" name="name" placeholder="Nome da categoria" required pattern="[A-Za-zÀ-ÿ\s]+" title="Por favor, insira um nome válido.">
                                                     </div>
 
                                                     <div class="col-sm-6">
-                                                        <input type="number" class="form-control form-control-user" name="id" placeholder="id da categoria">
+                                                        <input type="number" class="form-control form-control-user" name="id" placeholder="ID da categoria" required min="1" step="1">
                                                     </div>
 
-                                                    <!-- Envolve o botão em uma div com classe 'button-container' -->
                                                     <div class="button-container">
                                                         <button type="submit" class="btn btn-primary btn-user btn-block">
                                                             Salvar dados
@@ -239,10 +238,10 @@
                                                     <hr>
                                                     <div id="mensagemSucesso" class="message success"></div>
                                                     <div id="mensagemErro" class="message error"></div>
+                                                </div>
                                             </form>
                                         </div>
                                             <hr>
-
                                         </div>
                                     </div>
                                 </div>
@@ -255,7 +254,7 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Tabela de Produtos</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Tabela de Categoria de Produtos</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -290,7 +289,7 @@
             </div>
             <!-- End of Main Content -->
 
-            <!-- Footer -->
+            <!-- Footer
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="
@@ -299,7 +298,7 @@
                     </div>
                 </div>
             </footer>
-            <!-- End of Footer -->
+             End of Footer -->
 
         </div>
         <!-- End of Content Wrapper -->
