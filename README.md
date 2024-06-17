@@ -22,9 +22,37 @@ O trabalho desenvolvido visa auxiliar no controle e gestão dos produtos e clien
 
 
 ## Tecnologias Utilizadas
-- **Front-End**: HTML, CSS, JavaScript
-- **Back-End**: Java (Spring Boot, Thymeleaf, MySQL)
-- **Análise de Dados**: Power BI com conexão MySQL
+- **Front-End**:
+<div style="display: inline_block">
+<img align="center" alt="HTML5" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />  
+<img align="center" alt="CSS3" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />  
+<img align="center" alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+</div>
+
+- **Back-End**:
+<div style="display: inline_block">
+<img align="center" alt="java" src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" />  
+<img align="center" alt="spring" src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white" /> 
+</div>
+
+- **Análise de Dados**: 
+<div style="display: inline_block">
+<img align="center" alt="MySQL" src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white" />  
+<img align="center" alt="figma" src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" /> 
+ <img align="center" alt="powerbi" src="https://img.shields.io/badge/Microsoft-666666?style=for-the-badge&logo=microsoft&logoColor=white" /> 
+</div>
+
+- **Interfaces de Desenvolvimento**:
+<div style="display: inline_block">
+<img align="center" alt="vscode" src="https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" />  
+<img align="center" alt="inteligidea" src="https://img.shields.io/badge/IntelliJ_IDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white" /> 
+</div>
+
+- **Interfaces de Comunicação**:
+<div style="display: inline_block">
+<img align="center" alt="Trello" src="https://img.shields.io/badge/Trello-0052CC?style=for-the-badge&logo=trello&logoColor=white" />  
+<img align="center" alt="Whatsapp" src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" /> 
+</div>
 
 
 ## Requisitos Essenciais e Critérios de Avaliação
@@ -44,14 +72,6 @@ O trabalho desenvolvido visa auxiliar no controle e gestão dos produtos e clien
 | Busca Eficiente de Dados             | Implementar uma busca eficiente para os dados inseridos.                 | Tempo de resposta e precisão das buscas.               | Testes de velocidade e precisão das buscas.            |
 | Fácil Organização de Produtos        | Permitir a organização fácil e eficiente dos produtos inseridos no sistema. | Facilidade de organização e acesso aos produtos.       | Testes de organização, feedback dos usuários.          |
 
-
-## Tecnologias utilizadas:
-
-<div style="display: inline_block">
-<img align="center" alt="HTML5" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />  
-<img align="center" alt="CSS3" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />  
-<img align="center" alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
-</div>
 
 ## Etapas do Desenvolvimento:
 
