@@ -1,18 +1,49 @@
-# Projeto: Site Full stack Java para Dinha Kids 👼
+# Site Full stack Java: Dinha Kids
 
 <div align="center">
-  <b>"DINHA KIDS -VESTINDO SEU BEBÊ"</b> <br>
- <td><img src="Dinha.jpeg" width="400" style="display: block; margin: 0 auto;" alt="Macedo"> </td>
+ 
+ <td><img src="Dinha.jpeg" width="700" style="display: block; margin: 0 auto;" alt="Macedo"> </td>
   </div>
 
-## Sobre a Dinha Kids:
-* Negócio de confecção de roupas infantis que tem como necessidade um sistema que organizasse de forma eficaz o estoque de roupas, que está sendo um problema enfrentado por eles;
+##  Introdução
 
-## Objetivos do Sistema:
-* Criar um banco de dados para armazenar os dados que serão inseridos no sistema, assim evita-se a perda de dados e a dificuldade de encontrá-los;
-* Criar uma interface interativa, de fácil uso e com ótimo estilo, para proporcionar uma melhor experiência para o usuário;
-* Criar um dashboard de análise de dados que vão sendo inseridos no banco de dados, assim proporcionando a tomada de decisões informadas;
-* Criar sistema de autenticação de usuários por meio de página de login.
+Este projeto envolve o desenvolvimento de um site full stack, utilizando Java para o Back-End e HTML, CSS, e JavaScript para o Front-End. O projeto foi realizado como parte da disciplina de Programação Orientada a Objetos em Java na faculdade. Com o objetivo de aplicar nossos conhecimentos em um cenário real, estabelecemos uma parceria com a Dinha Kids, uma empresa de confecção de roupas infantis, que necessitava de um sistema para armazenar e gerenciar seus produtos. Durante o projeto, houve um contato direto e contínuo com o cliente para levantamento de requisitos e feedback constante. A Dinha Kids precisava de um sistema eficiente para controle e gestão de estoques e clientes. Após uma visita à fábrica e conversas com os funcionários, identificamos as seguintes necessidades:
+
+* Registro de matérias-primas com uma interface intuitiva para consulta rápida do estoque disponível.
+* Análise e armazenamento eficiente de dados, visando melhorar a gestão de pedidos.
+
+O trabalho desenvolvido visa auxiliar no controle e gestão dos produtos e clientes, melhorando a manipulação de dados cruciais para o negócio. Este esforço resultará na criação de um software que a empresa poderá usar como uma ferramenta diária em suas operações.
+
+##  Objetivo
+
+* **Desenvolver e adquirir conhecimento sobre a linguagem de programação Java**: Aplicar os conceitos aprendidos em sala de aula em um projeto prático, aumentando nosso conhecimento e experiência.
+* **Concluir o sistema para o cliente dentro do prazo determinado**: Demonstrar nossa capacidade e compromisso com a empresa.
+* **Garantir uma operação mais eficiente e satisfatória**: Proporcionar uma ferramenta que melhore a eficiência operacional da Dinha Kids e a satisfação de seus clientes.
+
+
+## Tecnologias Utilizadas
+- **Front-End**: HTML, CSS, JavaScript
+- **Back-End**: Java (Spring Boot, Thymeleaf, MySQL)
+- **Análise de Dados**: Power BI com conexão MySQL
+
+
+## Requisitos Essenciais e Critérios de Avaliação
+
+| Requisito Essencial                  | Descrição                                                                 | Critério de Avaliação                                 | Método de Avaliação                                    |
+|--------------------------------------|---------------------------------------------------------------------------|-------------------------------------------------------|-------------------------------------------------------|
+| Banco de Dados                       | Criar um banco de dados para armazenar os dados inseridos no sistema, evitando perda de dados e facilitando a busca. | Funcionalidade de armazenamento e recuperação de dados sem erros. | Testes de inserção e recuperação de dados.            |
+| Interface Interativa                 | Desenvolver uma interface de fácil uso e com um ótimo estilo para melhorar a experiência do usuário. | Usabilidade e estética da interface, feedback positivo dos usuários. | Testes de usabilidade, revisões de design, feedback dos usuários. |
+| Dashboard de Análise                 | Criar um dashboard para análise dos dados inseridos no banco de dados, permitindo a tomada de decisões informadas. | Precisão e utilidade das análises geradas pelo dashboard. | Testes de funcionalidade, validação com dados reais, feedback do cliente. |
+| Registro de Estoque de Confecções    | Implementar um sistema para registrar o estoque de peças de roupa.       | Precisão e atualização em tempo real do estoque.       | Testes de inserção, atualização e verificação de estoque. |
+| Consulta Rápida de Estoque Disponível| Permitir consultas rápidas do estoque disponível.                         | Tempo de resposta e precisão das consultas de estoque. | Testes de velocidade e precisão de consultas de estoque. |
+| Atualização da Situação de Estoque   | Possibilitar a atualização fácil e rápida da situação do estoque.        | Facilidade e rapidez na atualização de estoque.        | Testes de atualização de estoque, feedback dos usuários. |
+| Interface Amigável e Intuitiva       | Criar uma interface que seja fácil de usar e intuitiva.                  | Nível de satisfação dos usuários com a interface.      | Testes de usabilidade, entrevistas com usuários, feedback contínuo. |
+| Design Representativo da Empresa     | Desenvolver um design de interface que represente a identidade visual da empresa. | Coerência do design com a marca da empresa.            | Revisões de design, feedback dos stakeholders.         |
+| Análise dos Dados Inseridos          | Implementar funcionalidades para analisar os dados inseridos nos formulários. | Precisão e utilidade das análises dos dados.           | Validação com dados reais, feedback do cliente.        |
+| Armazenamento Seguro e Eficiente     | Garantir que o armazenamento dos dados seja seguro e eficiente.          | Segurança e eficiência do banco de dados.              | Auditorias de segurança, testes de desempenho do banco de dados. |
+| Busca Eficiente de Dados             | Implementar uma busca eficiente para os dados inseridos.                 | Tempo de resposta e precisão das buscas.               | Testes de velocidade e precisão das buscas.            |
+| Fácil Organização de Produtos        | Permitir a organização fácil e eficiente dos produtos inseridos no sistema. | Facilidade de organização e acesso aos produtos.       | Testes de organização, feedback dos usuários.          |
+
 
 ## Tecnologias utilizadas:
 
@@ -22,12 +53,32 @@
 <img align="center" alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
 </div>
 
-## Desenvolvimento:
+## Etapas do Desenvolvimento:
 
-* Desenvolvimento de website para a Dinha Kids que está no ramo da confecção de peças de roupas infantil e precisa de um sistema para armazenar, gerenciar e analisar dados.
-* Utilização do HTML,  CSS  e JavaScript para o front-end, com adaptação de um template para o conteúdo necessário para a página e mudança do design para representar a marca.
-* Uso do java para criação do back-end , com o uso do modelo spring boot  para mapeamento entre front e back, com alteração do html normal para thymeleaf e conexão com MySQL.
-Construção de um power bi com conexão MySQL para análise das peças de roupas.
+- **Back-End**:
+  - Linguagem: Java
+  - Framework: Spring Boot
+  - Servidor: Tomcat
+  - Conexão: Thymeleaf para conectar o back-end com o front-end
+  - Controladores: Criados para gerenciar pedidos de produtos e conectar com o front-end
+  - Modelos: Construção de modelos e criação de tabelas
+
+- **Front-End**:
+  - Linguagens: HTML, CSS, JavaScript
+  - Modelo: Adaptado de um projeto web encontrado online
+  - Estrutura: Alterações na estrutura do modelo, removendo páginas HTML desnecessárias e adaptando o design e CSS para representar a marca Dinha Kids
+
+- **Banco de Dados**:
+  - Tipo: MySQL
+  - Conexão: Integrado com a aplicação Java para armazenar dados inseridos no formulário
+
+- **Análise de Dados**:
+  - Ferramenta: Power BI
+  - Conexão: Ligado ao banco de dados MySQL da Dinha Kids
+  - Função: Permitir a análise de dados para tomada de decisão informada
+
+
+## Capturas de interface:
 
 <table>
   <tr>
