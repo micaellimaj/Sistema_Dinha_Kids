@@ -2,8 +2,13 @@
 
 <div align="center">
  
- <td><img src="Dinha.jpeg" width="700" style="display: block; margin: 0 auto;" alt="Macedo"> </td>
+ <td><img src="Dinha.jpeg" width="600" style="display: block; margin: 0 auto;" alt="Dinha"> </td>
   </div>
+
+  
+## Arquitetura do Projeto:
+
+![arquitetura do Projeto](IMG/arquiteturajava.gif)
 
 ##  Introdução
 
