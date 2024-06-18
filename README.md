@@ -173,6 +173,11 @@ O trabalho desenvolvido visa auxiliar no controle e gestão dos produtos e clien
  
 ## 🫂 Equipe do Projeto
 
+<div align="center">
+ 
+ <td><img src="IMG/trello.png" width="850" style="display: block; margin: 0 auto;" alt="trello"> </td>
+  </div>
+  
 1. [Matheus José](https://github.com/th3us117) -> Administração de Projeto : 
   * **Responsabilidades**: Documentação, levantamento de requisitos, e contato direto com a empresa.
 2. [Júlio Rodrigo](https://github.com/JRodrigo19) -> Desenvolvedor Back-End :  
