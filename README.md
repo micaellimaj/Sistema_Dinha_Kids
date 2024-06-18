@@ -1,16 +1,16 @@
-# Site Full stack Java: Dinha Kids
+# ☕ Site Full stack Java: Dinha Kids 
 
 <div align="center">
  
- <td><img src="Dinha.jpeg" width="600" style="display: block; margin: 0 auto;" alt="Dinha"> </td>
+ <td><img src="Dinha.jpeg" width="500" style="display: block; margin: 0 auto;" alt="Dinha"> </td>
   </div>
 
   
-## Arquitetura do Projeto:
+## 📃 Arquitetura do Projeto:
 
 ![arquitetura do Projeto](IMG/arquiteturajava.gif)
 
-##  Introdução
+## 🔍 Introdução
 
 Este projeto envolve o desenvolvimento de um site full stack, utilizando Java para o Back-End e HTML, CSS, e JavaScript para o Front-End. O projeto foi realizado como parte da disciplina de Programação Orientada a Objetos em Java na faculdade. Com o objetivo de aplicar nossos conhecimentos em um cenário real, estabelecemos uma parceria com a Dinha Kids, uma empresa de confecção de roupas infantis, que necessitava de um sistema para armazenar e gerenciar seus produtos. Durante o projeto, houve um contato direto e contínuo com o cliente para levantamento de requisitos e feedback constante. A Dinha Kids precisava de um sistema eficiente para controle e gestão de estoques e clientes. Após uma visita à fábrica e conversas com os funcionários, identificamos as seguintes necessidades:
 
@@ -19,14 +19,14 @@ Este projeto envolve o desenvolvimento de um site full stack, utilizando Java pa
 
 O trabalho desenvolvido visa auxiliar no controle e gestão dos produtos e clientes, melhorando a manipulação de dados cruciais para o negócio. Este esforço resultará na criação de um software que a empresa poderá usar como uma ferramenta diária em suas operações.
 
-##  Objetivo
+## 💬 Objetivo
 
 * **Desenvolver e adquirir conhecimento sobre a linguagem de programação Java**: Aplicar os conceitos aprendidos em sala de aula em um projeto prático, aumentando nosso conhecimento e experiência.
 * **Concluir o sistema para o cliente dentro do prazo determinado**: Demonstrar nossa capacidade e compromisso com a empresa.
 * **Garantir uma operação mais eficiente e satisfatória**: Proporcionar uma ferramenta que melhore a eficiência operacional da Dinha Kids e a satisfação de seus clientes.
 
 
-## Tecnologias Utilizadas
+## 📱 Tecnologias Utilizadas
 
 <div align="center" style="display: inline_block">
 <img align="center" alt="HTML5" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />  
@@ -40,12 +40,11 @@ O trabalho desenvolvido visa auxiliar no controle e gestão dos produtos e clien
 <img align="center" alt="vscode" src="https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" />  
 <img align="center" alt="inteligidea" src="https://img.shields.io/badge/IntelliJ_IDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white" /> 
 <img align="center" alt="Trello" src="https://img.shields.io/badge/Trello-0052CC?style=for-the-badge&logo=trello&logoColor=white" />  
-
 </div>
 
 
 
-## Requisitos Essenciais e Critérios de Avaliação
+## 🎖️ Requisitos Essenciais e Critérios de Avaliação
 
 | Requisito Essencial                  | Descrição                                                                 | Critério de Avaliação                                 | Método de Avaliação                                    |
 |--------------------------------------|---------------------------------------------------------------------------|-------------------------------------------------------|-------------------------------------------------------|
@@ -63,7 +62,7 @@ O trabalho desenvolvido visa auxiliar no controle e gestão dos produtos e clien
 | Fácil Organização de Produtos        | Permitir a organização fácil e eficiente dos produtos inseridos no sistema. | Facilidade de organização e acesso aos produtos.       | Testes de organização, feedback dos usuários.          |
 
 
-## Etapas do Desenvolvimento:
+## 🖥️ Etapas do Desenvolvimento:
 
 - **Back-End**:
   - Linguagem: Java
@@ -72,6 +71,10 @@ O trabalho desenvolvido visa auxiliar no controle e gestão dos produtos e clien
   - Conexão: Thymeleaf para conectar o back-end com o front-end
   - Controladores: Criados para gerenciar pedidos de produtos e conectar com o front-end
   - Modelos: Construção de modelos e criação de tabelas
+  - DTO: Objetos de Transferência de Dados (Data Transfer Objects) usados para transportar dados entre camadas
+  - Repository: Repositórios responsáveis pela interação com o banco de dados
+  - Services: Serviços que contêm a lógica de negócios do sistema
+  - exceptions: Classes para tratamento de exceções
 
 - **Front-End**:
   - Linguagens: HTML, CSS, JavaScript
@@ -87,7 +90,31 @@ O trabalho desenvolvido visa auxiliar no controle e gestão dos produtos e clien
   - Conexão: Ligado ao banco de dados MySQL da Dinha Kids
   - Função: Permitir a análise de dados para tomada de decisão informada
  
-## Capturas de interface:
+## 📶 Atributos do Banco de dados:
+
+* Tabela de Categoria de Produtos:
+
+| Campo                  | Descrição                                                                 |  Tipo                                  |
+|------------------------|--------------------------------------------------------------------------|----------------------------------------------|
+| **id**        | Identificador exclusivo para cada Categoria de produto                               |   INT - CHAVE PRIMÁRIA                           | 
+| **name**                | Nome do Produto da Categoria                                                         |     VARCHAR(45)      |
+
+* Tabela de Produtos:
+
+| Campo                  | Descrição                                                                 |  Tipo                                  |
+|------------------------|--------------------------------------------------------------------------|----------------------------------------------|
+| **id**        | Identificador exclusivo para cada produto                               |   INT - CHAVE PRIMÁRIA                           | 
+| **created_at**                | Data da primeira modificação no produto                                                        |     DATETIME(6)      |
+| **last_update**        | Data da última modificação no produto                              |   DATETIME(6)                          | 
+| **name**                | Nome do Produto                                                       |     VARCHAR(100)      |
+| **price**        | Preço em reais do produto                               |  DOUBLE                        | 
+| **quantity**                | Quantidade de produtos                                                       |     VARCHAR(45)      |
+| **Category_id**                | Identificado exclusivo da categoria do produto                                                        |     INT      |
+
+
+
+ 
+## 📸 Capturas de interface:
 
 <table>
  <tr>
@@ -134,14 +161,17 @@ O trabalho desenvolvido visa auxiliar no controle e gestão dos produtos e clien
 
 **Descrição**:
 
+* **Banco de dados**: Conexão entre as tabelas Produtos e Categorias no banco de dados Dinha Kids.
 * **dashboard.html**: Página responsável por trazer a análise de dados em um dashboard feito no power BI.
 * **categoria.html**: Página responsável pela inserção da Categoria dos produtos no banco de dados MySQL.
 * **tables.html**: Página responsável pela inserção dos produtos no banco de dados com conexão com a tabela de categoria dos produtos da página categoria.html.
+* **404.html**:  Página é exibida quando um usuário tenta acessar uma URL que não existe no servidor, sendo usado para comunicar erro ou orientar o usuário
+* **blank.html**: A página blank, ou página em branco, é geralmente uma página HTML sem conteúdo, pode ser usado para desenvolvimento de novas páginas ou testes.
 
 
 
  
-## Equipe do Projeto
+## 🫂 Equipe do Projeto
 
 1. [Matheus José](https://github.com/th3us117) -> Administração de Projeto : 
   * **Responsabilidades**: Documentação, levantamento de requisitos, e contato direto com a empresa.
@@ -153,8 +183,12 @@ O trabalho desenvolvido visa auxiliar no controle e gestão dos produtos e clien
   * **Responsabilidades**: Desenvolvimento de funcionalidades do servidor, implementação de lógica de negócios, e suporte na integração com o front-end.
 5. [Jacciano do Nascimento](https://github.com/jacciano) -> Função: Desenvolvedor Front-End :
   * **Responsabilidades**: Criação e manutenção da interface do usuário, implementação de design responsivo, e adaptação do template web para as necessidades do projeto.
+    
+## 🌐 Visualização do Site
 
-## Estrutura do repositório
+![Visualização do Projeto](IMG/dinha3.gif)
+
+## 🗃️ Estrutura do repositório
 
 ------------
 
@@ -199,7 +233,7 @@ O trabalho desenvolvido visa auxiliar no controle e gestão dos produtos e clien
     │
     └──
 
-## Conclusão da Equipe
+## 💾 Conclusão 
 
 O desenvolvimento do sistema de gerenciamento de produtos para a Dinha Kids foi uma experiência enriquecedora e altamente educacional para toda a equipe. Ao longo do projeto, fomos capazes de aplicar teorias e conceitos aprendidos em sala de aula em um ambiente prático e colaborativo, o que nos permitiu compreender melhor os desafios e as demandas reais do mercado de trabalho.
 
@@ -207,6 +241,18 @@ Estamos confiantes de que as habilidades e conhecimentos adquiridos ao longo des
 
 Agradecemos à Dinha Kids pela oportunidade de colaborar em um projeto tão significativo e ao professor Wolney pelo apoio contínuo e orientação valiosa durante todo o processo. Estamos animados para enfrentar novos desafios e continuar a crescer como desenvolvedores e profissionais.
 
+## 📎 Referências:
+
+*  Documentações e links úteis:
+[thymeleaf](https://www.thymeleaf.org/doc/tutorials/3.1/usingthymeleaf.html)/
+[java](https://docs.oracle.com/en/java/)/
+[springboot](https://spring.io/projects/spring-boot)
+
+* Contéudos de video
+[front-end](https://youtube.com/playlist?list=PLJIP7GdByOyvNQPr0_ALXOShj9-vq6bTb&si=34zH7W3E7Gn79ZO6)/
+[back-end](https://youtube.com/playlist?list=PL8iIphQOyG-DHLpEx1TPItqJamy08fs1D&si=SRT6tuEh3syh1Tn6)/
+[thymeleafSpringboot](https://www.youtube.com/watch?v=arEf4OXsUXI)/
+[cursojava](https://app.rocketseat.com.br/journey/minicurso-java)
 
 
 
