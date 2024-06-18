@@ -177,6 +177,7 @@ O trabalho desenvolvido visa auxiliar no controle e gestão dos produtos e clien
  
  <td><img src="IMG/trello.png" width="850" style="display: block; margin: 0 auto;" alt="trello"> </td>
   </div>
+
   
 1. [Matheus José](https://github.com/th3us117) -> Administração de Projeto : 
   * **Responsabilidades**: Documentação, levantamento de requisitos, e contato direto com a empresa.
@@ -186,7 +187,7 @@ O trabalho desenvolvido visa auxiliar no controle e gestão dos produtos e clien
   * **Responsabilidades**: Modelagem de banco de dados, otimização de consultas, e gerenciamento do banco de dados MySQL.
 4. [Micael José](https://github.com/micaellimaj) -> Desenvolvedor Back-End :
   * **Responsabilidades**: Desenvolvimento de funcionalidades do servidor, implementação de lógica de negócios, e suporte na integração com o front-end.
-5. [Jacciano do Nascimento](https://github.com/jacciano) -> Função: Desenvolvedor Front-End :
+5. [Jacciano do Nascimento](https://github.com/jacciano) -> Desenvolvedor Front-End :
   * **Responsabilidades**: Criação e manutenção da interface do usuário, implementação de design responsivo, e adaptação do template web para as necessidades do projeto.
     
 ## 🌐 Visualização do Site
